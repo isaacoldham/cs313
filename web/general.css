@@ -1,5 +1,9 @@
 body {
-    background-image: url("week2/IMG_20201229_155624.jpg");
+    background-image: url("week2/IMG_20201229_155624.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color:black;
     font-size:larger;
     text-align:center;
