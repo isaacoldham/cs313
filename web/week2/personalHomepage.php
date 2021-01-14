@@ -14,7 +14,7 @@
   <h1>Welcome to Isaac Oldham's Home Page!</h1>
   <hr/>
   <div>
-    <a href="../home.php">CS-213 Assignments</a>
+    <a href="../home.php">CSE 341 Assignments</a>
   </div>
   <hr/>
   <p style="text-align:center; font-family:arial;">Hey everyone! My name is <strong>Isaac Oldham!</strong> I'm majoring in software engineering and I'm from Spanish Fork Utah.</p>
