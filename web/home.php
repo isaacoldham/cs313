@@ -12,11 +12,12 @@
 
 <body>
   <header>
-    <h2>Home</h2>
-    <div>Below are the links for all of my assignments for CSE-341!</div>
+    <h2> Home</h2>
+    <div> Below are the links for all of my assignments for CSE-341!</div>
     <ul>
         <li><a href="week2/personalHomepage.php">Assignemnt 1</a></li>
         <li><a>Assignment 2</a></li>
+        <li><a>Coming Soon</a></li>
     </ul>
   </header>
 </body>
