@@ -26,11 +26,11 @@
   <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
   <div>Below are some recent pictures from my life. <button onclick="showImage()">Click here</button> to view them.</div>
   <div style="text-align:center" id="clickable">
-    <img src="IMG_20201126_093233.jpg" alt="My Dog Fin" style="height:320px; width:auto;"/>
+    <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
   </div>
-  <blockquote style="text-align:center; font-family:courier;">
+  <footer>
     Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
-  </blockquote>
+  </footer>
     
   </header>
 </body>

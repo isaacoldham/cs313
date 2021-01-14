@@ -11,3 +11,10 @@ ul {
 #clickable {
     display: none;
 }
+.clickableImage {
+    height:320px;
+    width:auto;
+}
+footer {
+    float: bottom;
+}
