@@ -13,6 +13,9 @@ ul {
 }
 #video {
     display: none;
+    text-align:center;
+    margin: auto;
+    padding: auto;
 }
 .clickableImage {
     height:320px;
