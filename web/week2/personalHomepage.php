@@ -26,7 +26,7 @@
   <div style="text-align:center" id="clickable">
     <img src="IMG_20201007_224253.jpg"class="clickableImage"/>
     <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
-    <img src="IMG_20201120_134242.jpg"class="clivkableImage"/>
+    <img src="IMG_20201120_134242.jpg"class="clickableImage"/>
   </div>
   <footer>
     <hr>
