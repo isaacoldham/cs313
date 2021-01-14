@@ -22,13 +22,13 @@
     <a href="../home.php">CSE 341 Assignments</a>
   </div>
   <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
-  <div id="picDiv">Below are some recent pictures from my life.</div>
+  <div class="picDiv">Below are some recent pictures from my life.</div>
   <div style="text-align:center" id="clickable">
     <img src="IMG_20201007_224253.jpg"class="clickableImage"/>
     <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
     <img src="IMG_20201120_134242.jpg"class="clickableImage"/>
   </div>
-  <div>
+  <div class="picDiv">
     <button onclick="showImage()">Click here</button> 
     To see a super cool video of the world record ski jump!
   </div>
