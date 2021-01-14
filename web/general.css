@@ -1,5 +1,5 @@
 body {
-    background-color:white;
+    background-image: url("week2/IMG_20201229_155624.jpg");
     color:black;
     font-size:larger;
     text-align:center;
@@ -7,4 +7,7 @@ body {
 h2 {
     margin-top: 100px;
     font-weight: bold;
+}
+ul {
+    list-style-type: none;
 }

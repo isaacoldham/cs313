@@ -14,10 +14,10 @@
   <header>
     <h2>Home</h2>
     <div>Below are the links for all of my assignments for CSE-341!</div>
-    <li>
-        <ol><a href="week2/personalHomepage.php">Assignemnt 1</a></ol>
-        <ol><a>Assignment 2</a></ol>
-    </li>
+    <ul>
+        <li><a href="week2/personalHomepage.php">Assignemnt 1</a></li>
+        <li><a>Assignment 2</a></li>
+    </ul>
   </header>
 </body>
 
