@@ -9,7 +9,7 @@
   <title>About Me</title>
   <script>
       function showImage() {
-          document.getElementById("clickable").style.display = "block";
+          document.getElementById("video").style.display = "block";
       }
   </script>
 
@@ -22,13 +22,17 @@
     <a href="../home.php">CSE 341 Assignments</a>
   </div>
   <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
-  <div id="picDiv">Below are some recent pictures from my life. <button onclick="showImage()">Click here</button> to view them.</div>
+  <div id="picDiv">Below are some recent pictures from my life.</div>
   <div style="text-align:center" id="clickable">
     <img src="IMG_20201007_224253.jpg"class="clickableImage"/>
     <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
     <img src="IMG_20201120_134242.jpg"class="clickableImage"/>
   </div>
-  <iframe src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div>
+    <button onclick="showImage()">Click here</button> 
+    To see a super cool video of the world record ski jump!
+  </div>
+  <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <footer>
     <hr>
     Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
