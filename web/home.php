@@ -10,9 +10,14 @@
   <title>Home</title>
 </head>
 
-<body style="background-color:white; color:black; font-size:larger;">
+<body>
   <header>
-    <h1 style="text-align:center; margin-top: 100px; font-weight: bold;">Here are all the assignments for the semester!</h1>
+    <h2>Home</h2>
+    <div>Below are the links for all of my assignments for cs341</div>
+    <li>
+        <ol><a href="week2/personalHomepage.php">Assignemnt 1</a></ol>
+        <ol><a>Assignment 2</a></ol>
+    </li>
   </header>
 </body>
 
