@@ -32,4 +32,18 @@ footer {
     background-color: rgb(60, 70, 70);
     color: white;
     font-style: none;
+    padding: 8px;
+}
+a {
+    color: white;
+    font-style: bold;
+    text-decoration:none;
+}
+a:visited {
+    color: white;
+    text-decoration:none;
+}
+iframe {
+    width:420;
+    height:315;
 }
