@@ -18,15 +18,15 @@
 <body>
   <header>
   <h1>Welcome to Isaac Oldham's Home Page!</h1>
-  <hr/>
-  <div>
+  <div id="menu">
     <a href="../home.php">CSE 341 Assignments</a>
   </div>
-  <hr/>
   <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
-  <div>Below are some recent pictures from my life. <button onclick="showImage()">Click here</button> to view them.</div>
+  <div id="picDiv">Below are some recent pictures from my life. <button onclick="showImage()">Click here</button> to view them.</div>
   <div style="text-align:center" id="clickable">
+    <img src="IMG_20201007_224253.jpg"class="clickableImage"/>
     <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
+    <img src="IMG_20201120_134242.jpg"class="clivkableImage"/>
   </div>
   <footer>
     <hr>
