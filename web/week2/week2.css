@@ -9,8 +9,10 @@ ul {
     list-style-type: none;
 }
 #clickable {
-    display: none;
     margin-bottom: 10px;
+}
+#video {
+    display: none;
 }
 .clickableImage {
     height:320px;
