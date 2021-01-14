@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="week2.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" description="About me">
   <title>About Me</title>
   <script>
