@@ -24,7 +24,7 @@
   </div>
   <hr/>
   <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
-  <div onclick="showImage()">Below are some recent pictures from my life. Click here to view them.</div>
+  <div>Below are some recent pictures from my life. <button onclick="showImage()">Click here</button> to view them.</div>
   <div style="text-align:center" id="clickable">
     <img src="IMG_20201126_093233.jpg" alt="My Dog Fin" style="height:320px; width:auto;"/>
   </div>
