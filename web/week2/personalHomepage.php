@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" description="About me">
   <title>About Me</title>
+  <script>
+      function showImage() {
+          document.getElementById("clickable").style.display = "block";
+      }
+  </script>
+
 </head>
 
 <body>
@@ -17,9 +23,9 @@
     <a href="../home.php">CSE 341 Assignments</a>
   </div>
   <hr/>
-  <p style="text-align:center; font-family:arial;">Hey everyone! My name is <strong>Isaac Oldham!</strong> I'm majoring in software engineering and I'm from Spanish Fork Utah.</p>
+  <p>Hey everyone! My name is <strong>Isaac Oldham!</strong> My major is software engineering and I'm from Spanish Fork Utah.</p>
   <div>Below are some recent pictures from my life. Click here to view them.</div>
-  <div style="text-align:center">
+  <div style="text-align:center" id="clickable">
     <img src="../me.jpg" alt="A pic of Me!" style="height:320px; width:auto;"/>
   </div>
   <blockquote style="text-align:center; font-family:courier;">
@@ -30,3 +36,4 @@
 </body>
 
 </html>
+

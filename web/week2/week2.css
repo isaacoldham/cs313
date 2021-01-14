@@ -1,0 +1,13 @@
+body {
+    color:black;
+    text-align:center;
+}
+h2 {
+    font-weight: bold;
+}
+ul {
+    list-style-type: none;
+}
+#clickable {
+    display: none;
+}
