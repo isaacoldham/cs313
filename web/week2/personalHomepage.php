@@ -29,6 +29,7 @@
     <img src="IMG_20201126_093233.jpg"class="clickableImage"/>
   </div>
   <footer>
+    <hr>
     Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
   </footer>
     
