@@ -27,9 +27,14 @@
 
   <div class="picDiv"></div>
   <div style="text-align:center" id="clickable">
-    <img src="IMG_20201007_224253.jpg" class="clickableImage" />
-    <img src="IMG_20201126_093233.jpg" class="clickableImage" />
-    <img src="IMG_20201120_134242.jpg" class="clickableImage" />
+    <img src="ski1.jpg" class="clickableImage" />
+    <img src="ski2.jpg" class="clickableImage" />
+    <img src="ski3.jpg" class="clickableImage" />
+    <img src="ski4.jpg" class="clickableImage" />
+    <img src="ski5.jpg" class="clickableImage" />
+    <img src="ski6.jpg" class="clickableImage" />
+    <img src="ski7.jpg" class="clickableImage" />
+    <img src="ski8.jpg" class="clickableImage" />
   </div>
   <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
