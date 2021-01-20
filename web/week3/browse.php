@@ -27,14 +27,38 @@
 
   <div class="picDiv"></div>
   <div style="text-align:center" id="clickable">
-    <img src="ski1.jpg" class="clickableImage" />
-    <img src="ski2.jpg" class="clickableImage" />
-    <img src="ski3.jpg" class="clickableImage" />
-    <img src="ski4.jpg" class="clickableImage" />
-    <img src="ski5.jpg" class="clickableImage" />
-    <img src="ski6.jpg" class="clickableImage" />
-    <img src="ski7.jpg" class="clickableImage" />
-    <img src="ski8.jpg" class="clickableImage" />
+    <div class="item" id="ski1">
+      <img src="ski1.jpg" class="clickableImage" />
+      Rossignol - Black Ops
+    </div>
+    <div class="item" id="ski2">
+      <img src="ski2.jpg" class="clickableImage" />
+      Dynastar - Menace
+    </div>
+    <div class="item" id="ski3">
+      <img src="ski3.jpg" class="clickableImage" />
+      Atomic - Vantage 83
+    </div>
+    <div class="item" id="ski4">
+      <img src="ski4.jpg" class="clickableImage" />
+      Blizzard - Bonafide
+    </div>
+    <div class="item" id="ski5">
+      <img src="ski5.jpg" class="clickableImage" />
+      Atomic - Vantage 75
+    </div>
+    <div class="item" id="ski6">
+      <img src="ski6.jpg" class="clickableImage" />
+      Rossignol - Hero Elite Plus
+    </div>
+    <div class="item" id="ski7">
+      <img src="ski7.jpg" class="clickableImage" />
+      Atomic - Vantage 79
+    </div>
+    <div class="item" id="ski8">
+      <img src="ski8.jpg" class="clickableImage" />
+      Volkl - M5 Mantra
+    </div>
   </div>
   <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>

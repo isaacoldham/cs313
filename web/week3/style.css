@@ -17,4 +17,14 @@ a.menuItem {
     color: white;
     font-style: bold;
     text-decoration:none;
+    margin: 3px;
+}
+
+a.menuItem:hover {
+    text-decoration: underline;
+}
+
+.item {
+    border:rgb(60, 70, 70);
+    margin: 10px;
 }
