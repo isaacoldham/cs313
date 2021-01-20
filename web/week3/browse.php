@@ -19,19 +19,11 @@
   <header>
     <h1>The Ski Shop</h1>
     <div id="menu">
-      <a href="">Home</a>
+      <a class="menuItem" href="">Mens skis</a>
+      <a class="menuItem" href="">Womens skis</a>
+      <a class="menuItem" href="">Kids skis</a>
     </div>
   </header>
-  
-  <div>
-    <h3>Categories</h3>
-    <ul>
-      <li><a>Mens skis</a></li>
-      <li><a>Womens skis</a></li>
-      <li><a>Kids skis</a></li>
-    </ul>
-  
-  </div>
 
   <div class="picDiv"></div>
   <div style="text-align:center" id="clickable">

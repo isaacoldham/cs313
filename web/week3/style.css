@@ -12,3 +12,9 @@ h1 {
     font-style: none;
     padding: 8px;
 }
+
+a.menuItems {
+    color: white;
+    font-style: bold;
+    text-decoration:none;
+}
