@@ -26,7 +26,7 @@
   </header>
 
   <div class="picDiv"></div>
-  <div style="text-align:center" id="clickable">
+  <div style="text-align:center" id="wrapper">
     <div class="item" id="ski1">
       <img src="ski1.jpg" class="clickableImage" />
       Rossignol - Black Ops
