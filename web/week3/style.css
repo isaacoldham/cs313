@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+#menu {
+    background-color: rgb(60, 70, 70);
+    color: white;
+    font-style: none;
+    padding: 8px;
+}
