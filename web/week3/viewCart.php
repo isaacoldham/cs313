@@ -42,7 +42,7 @@ $items = $_POST["skis"];
             echo
             '<div><label>' . $cleanItem . '</label>
             <input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
-            <input type="checkbox" id="ski1" name="skis[]" value="Rossignol - Black Ops">
+            //<input type="checkbox" id="ski1" name="skis[]" value="Rossignol - Black Ops">
         }
         ?>
     </form>
