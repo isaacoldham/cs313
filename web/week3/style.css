@@ -29,6 +29,7 @@ a.menuItem:hover {
     margin: 10px;
     width: 20%;
     float:left;
+    box-sizing: border-box;
 }
 
 .clickableImage {
@@ -36,6 +37,5 @@ a.menuItem:hover {
 }
 
 #wrapper {
-    display: grid;
 
 }
