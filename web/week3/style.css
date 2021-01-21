@@ -28,6 +28,7 @@ a.menuItem:hover {
     border:rgb(60, 70, 70);
     margin: 10px;
     width: 20%;
+    float:left;
     box-sizing: border-box;
 }
 
