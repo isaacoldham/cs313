@@ -1,3 +1,7 @@
+<?php 
+session_start();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--https://github.com/isaacoldham/cs313-->
@@ -8,9 +12,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
   <title>The Ski Shop</title>
   <script>
-    // function showImage() {
-    //   document.getElementById("video").style.display = "block";
-    // }
+    function CheckNotNull() {
+      if (document.getElementById("formId").value == NULL)
+      {
+        return false;
+      }
+      else
+      {
+        return true;
+      }
+
+    }
   </script>
 
 </head>
@@ -26,7 +38,7 @@
   </header>
 
 
-  <form action="viewCart.php" method="post">
+  <form onsubmit="CheckNotNull()" action="viewCart.php" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
       <div for="ski1" class="item" id="ski1">
         <img src="ski1.jpg" class="clickableImage" />

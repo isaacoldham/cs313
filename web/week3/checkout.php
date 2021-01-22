@@ -1,5 +1,6 @@
 <?php
-$items = $_POST["skis"];
+session_start();
+//$items = $_POST["skis"];
 ?>
 
 <!DOCTYPE html>
@@ -25,27 +26,39 @@ $items = $_POST["skis"];
     </header>
 
     <br>
-    <div>
+    <div style="font-size: 20px; margin-bottom: 8px;">
         The items in your cart are:
     </div>
 
-    <form action=".php" method="post">
+    <form action="confirmation.php" method="post">
         <?php
-        print_r($items);
-        foreach ($items as $item) {
-            $cleanItem = htmlspecialchars($item);
-            echo
-            '<div><label>' . $cleanItem . '</label></div>';
+        $count = 0;
+        if (empty($_SESSION)) {
+            foreach ($items as $item) {
+                $count = $count + 1;
+                $cleanItem = htmlspecialchars($item);
+                $_SESSION[$count] = $cleanItem;
+                echo
+                '<div><label style="font-weight:bold; font-size:18px">' . $_SESSION[$count] . '</label>
+               <input type="checkbox" name="skis[]" value="' . $_SESSION[$count] . '" checked></div>';
+            }
+        } else {
+            foreach ($_SESSION["skis"] as $key => $item) {
+                $cleanItem = htmlspecialchars($item);
+                echo
+                '<div><label style="font-weight:bold; font-size:18px">' . $cleanItem . '</label>
+            <input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
+            }
         }
         ?>
-        <label>Current Address:</label><input type="test" name="address">
-    </form>
+        <div style="margin: 8px;"><label>Please enter your current address: </label><input type="text" name="address"></div>
 
-    <hr>
-    <form action="confirmation.php" method="post">
+        <hr>
         <div id="wrapper">
-            <h3>Click here to Checkout</h3>
+            <h3>Finalize Purchase</h3>
             <input type="submit" style="text-align:center;" ;>
+            <br><br>
+            <div>Or you can <a href="viewCart.php">review</a> your order.</div>
         </div>
     </form>
 

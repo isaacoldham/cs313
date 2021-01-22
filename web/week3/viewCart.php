@@ -1,5 +1,7 @@
 <?php
-$items = $_POST["skis"];
+session_start();
+$_SESSION += $_POST;
+$items = $_SESSION["skis"];
 ?>
 
 <!DOCTYPE html>
@@ -30,28 +32,49 @@ $items = $_POST["skis"];
     </header>
 
     <br>
-    <div>
+    <div style="font-size: 20px; margin-bottom: 8px;">
         The items in your cart are:
     </div>
 
-    <form action="checkout.php" method="post">
-        <?php
-        print_r($items);
+    <?php
+    $count = 0;
+    if (empty($_SESSION)) {
         foreach ($items as $item) {
+            $count = $count + 1;
+            $cleanItem = htmlspecialchars($item);
+            $_SESSION[$count] = $cleanItem;
+            echo
+            '<div><label style="font-weight:bold; font-size:18px">' . $_SESSION[$count] . '</label>
+               <input type="checkbox" name="skis[]" value="' . $_SESSION[$count] . '" checked></div>';
+        }
+    } else {
+        foreach ($_SESSION["skis"] as $key => $item){
             $cleanItem = htmlspecialchars($item);
             echo
-            '<div><label>' . $cleanItem . '</label>
+            '<div><label style="font-weight:bold; font-size:18px">' . $cleanItem . '</label>
             <input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
-            //<input type="checkbox" id="ski1" name="skis[]" value="Rossignol - Black Ops">
         }
-        ?>
-    </form>
+    }
 
-    <hr>
+    ?>
+
     <form action="checkout.php" method="post">
+        <?php
+        //foreach ($items as $item) {
+          //  $cleanItem = htmlspecialchars($item);
+            //echo
+            //'<div><label style="font-weight:bold; font-size:18px">' . $cleanItem . '</label>
+            //<input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
+        //}
+        //?>
+
+
+        <hr>
         <div id="wrapper">
             <h3>Proceed to Checkout</h3>
             <input type="submit" style="text-align:center;" value="Checkout">
+            <br><br>
+            <div>Or you can <a href="browse.php">cancel</a> your order.</div>
         </div>
     </form>
 
