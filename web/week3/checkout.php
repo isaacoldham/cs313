@@ -12,7 +12,16 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
     <title>The Ski Shop</title>
-
+    <script>
+        function CheckForNull() {
+            if (document.getElementById !== NULL) {
+                true;
+            }
+            else {
+                false;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -56,7 +65,7 @@ session_start();
         <hr>
         <div id="wrapper">
             <h3>Finalize Purchase</h3>
-            <input type="submit" style="text-align:center;" ;>
+            <input onsubmit="CheckForNull()" type="submit" style="text-align:center;" ;>
             <br><br>
             <div>Or you can <a href="viewCart.php">review</a> your order.</div>
         </div>

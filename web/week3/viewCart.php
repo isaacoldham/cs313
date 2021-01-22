@@ -13,12 +13,6 @@ $items = $_SESSION["skis"];
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
     <title>The Ski Shop</title>
-    <script>
-        // function showImage() {
-        //   document.getElementById("video").style.display = "block";
-        // }
-    </script>
-
 </head>
 
 <body>

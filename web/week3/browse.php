@@ -12,17 +12,6 @@ session_destroy();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
   <title>The Ski Shop</title>
   <script>
-    function CheckNotNull() {
-      if (document.getElementById("formId").value == NULL)
-      {
-        return false;
-      }
-      else
-      {
-        return true;
-      }
-
-    }
   </script>
 
 </head>
