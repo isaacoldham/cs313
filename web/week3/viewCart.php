@@ -1,7 +1,5 @@
 <?php
 session_start();
-$_SESSION += $_POST;
-$items = $_SESSION["skis"];
 ?>
 
 <!DOCTYPE html>
@@ -31,24 +29,33 @@ $items = $_SESSION["skis"];
     </div>
 
     <?php
-    $count = 0;
-    if (empty($_SESSION)) {
-        foreach ($items as $item) {
-            $count = $count + 1;
-            $cleanItem = htmlspecialchars($item);
-            $_SESSION[$count] = $cleanItem;
-            echo
-            '<div><label style="font-weight:bold; font-size:18px">' . $_SESSION[$count] . '</label>
-               <input type="checkbox" name="skis[]" value="' . $_SESSION[$count] . '" checked></div>';
-        }
-    } else {
-        foreach ($_SESSION["skis"] as $key => $item){
+    
+        foreach ($_SESSION as $key => $item){
             $cleanItem = htmlspecialchars($item);
             echo
             '<div><label style="font-weight:bold; font-size:18px">' . $cleanItem . '</label>
             <input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
         }
-    }
+    
+        if (isset($_POST['ski1'])) {
+            echo
+            '<div><label style="font-weight:bold; font-size:18px">Rossignol - Black Ops</label>
+            <input type="checkbox" name="skis[]" value="' . $cleanItem . '" checked></div>';
+          } elseif (isset($_POST['ski2'])) {
+            $_SESSION["ski2"] = $_POST['ski2'];
+          } elseif (isset($_POST['ski3'])) {
+            $_SESSION["ski3"] = $_POST['ski3'];
+          } elseif (isset($_POST['ski4'])) {
+            $_SESSION["ski4"] = $_POST['ski4'];
+          } elseif (isset($_POST['ski5'])) {
+            $_SESSION["ski5"] = $_POST['ski5'];
+          } elseif (isset($_POST['ski6'])) {
+            $_SESSION["ski6"] = $_POST['ski6'];
+          } elseif (isset($_POST['ski7'])) {
+            $_SESSION["ski7"] = $_POST['ski7'];
+          } elseif (isset($_POST['ski8'])) {
+            $_SESSION["ski8"] = $_POST['ski8'];
+          }
 
     ?>
 

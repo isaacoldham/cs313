@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
-session_destroy();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!--https://github.com/isaacoldham/cs313-->
@@ -27,58 +27,87 @@ session_destroy();
   </header>
 
 
-  <form onsubmit="CheckNotNull()" action="viewCart.php" method="post" id="formId">
+  <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
       <div for="ski1" class="item" id="ski1">
         <img src="ski1.jpg" class="clickableImage" />
         <label for="ski1">Rossignol - Black Ops</label>
-        <input type="checkbox" id="ski1" name="skis[]" value="Rossignol - Black Ops">
+        <button type="submit" name="ski1" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski2">
         <img src="ski2.jpg" class="clickableImage" />
         <label for="ski2">Dynastar - Menace</label>
-        <input type="checkbox" id="ski2" name="skis[]" value="Dynastar - Menace">
+        <button type="submit" name="ski2" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski3">
         <img src="ski3.jpg" class="clickableImage" />
         <label for="ski3">Atomic - Vantage 83</label>
-        <input type="checkbox" id="ski3" name="skis[]" value="Atomic - Vantage 83">
+        <button type="submit" name="ski3" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski4">
         <img src="ski4.jpg" class="clickableImage" />
         <label for="ski4">Blizzard - Bonafide</label>
-        <input type="checkbox" id="ski4" name="skis[]" value="Blizzard - Bonafide">
+        <button type="submit" name="ski4" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski5">
         <img src="ski5.jpg" class="clickableImage" />
         <label for="ski5">Atomic - Vantage 75</label>
-        <input type="checkbox" id="ski5" name="skis[]" value="Atomic - Vantage 75">
+        <button type="submit" name="ski5" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski6">
         <img src="ski6.jpg" class="clickableImage" />
         <label for="ski6">Rossignol - Hero Elite Plus</label>
-        <input type="checkbox" id="ski6" name="skis[]" value="Rossignol - Hero Elite Plus">
+        <button type="submit" name="ski6" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski7">
         <img src="ski7.jpg" class="clickableImage" />
         <label for="ski7"> Atomic - Vantage 79</label>
-        <input type="checkbox" id="ski7" name="skis[]" value="Atomic - Vantage 79">
+        <button type="submit" name="ski7" style="text-align:center;" value="true">Add to Cart</button>
       </div>
       <div class="item" id="ski8">
         <img src="ski8.jpg" class="clickableImage" />
         <label for="ski8">Volkl - M5 Mantra</label>
-        <input type="checkbox" id="ski8" name="skis[]" value="Volkl - M5 Mantra">
+        <button type="submit" name="ski8" style="text-align:center;" value="true">Add to Cart</button>
       </div>
     </div>
 
-    <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-      <br>
-      <h3>Click here to view your cart!</h3>
-      <input type="submit" style="text-align:center;" value="View Cart">
-    </div>
   </form>
 
+  <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
+    <br>
+    <a href="viewCart.php">
+      <h3>Click here to view your cart!</h3>
+    </a>
+  </div>
 
+  <?php
+
+  if (isset($_POST['ski1'])) {
+    $_SESSION["ski1"] = $_POST['ski1'];
+  } elseif (isset($_POST['ski2'])) {
+    $_SESSION["ski2"] = $_POST['ski2'];
+  } elseif (isset($_POST['ski3'])) {
+    $_SESSION["ski3"] = $_POST['ski3'];
+  } elseif (isset($_POST['ski4'])) {
+    $_SESSION["ski4"] = $_POST['ski4'];
+  } elseif (isset($_POST['ski5'])) {
+    $_SESSION["ski5"] = $_POST['ski5'];
+  } elseif (isset($_POST['ski6'])) {
+    $_SESSION["ski6"] = $_POST['ski6'];
+  } elseif (isset($_POST['ski7'])) {
+    $_SESSION["ski7"] = $_POST['ski7'];
+  } elseif (isset($_POST['ski8'])) {
+    $_SESSION["ski8"] = $_POST['ski8'];
+  }
+
+  //echo variable info
+  echo "<div>post</div>";
+  print_r($_POST);
+  echo "<div>session</div>";
+  print_r($_SESSION);
+
+
+  ?>
 
   <br><br><br><br>
   <!-- <div class="picDiv">

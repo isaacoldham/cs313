@@ -1,4 +1,5 @@
 <?php
+session_start();
 $items = $_POST["skis"];
 $address = $_POST["address"];
 ?>
@@ -38,7 +39,7 @@ $address = $_POST["address"];
     }
     ?>
 
-    <div style="margin: 8px; font-size: 18px;">These items will be shipped to:</div>
+    <div style="margin: 8px; font-size: 18px; font-weight:lighter;">These items will be shipped to:</div>
     
     <?php
         echo '<div>'.$address.'</div>';
