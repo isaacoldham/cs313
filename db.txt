@@ -1,0 +1,28 @@
+CREATE TABLE skis
+(
+    ski_id SERIAL,
+    length    INTEGER NOT NULL,
+    ski_name  VARCHAR(30) NOT NULL,
+    make      VARCHAR(15),
+    CONSTRAINT skis_pkey PRIMARY KEY (ski_id)
+);
+
+
+CREATE TABLE user_rental
+(
+    user_id    SERIAL,
+    first_name VARCHAR(15) NOT NULL,
+    last_name  VARCHAR(15) NOT NULL,
+    CONSTRAINT user_pkey PRIMARY KEY (user_id)
+);
+
+CREATE TABLE rental
+(
+    rental_id SERIAL,
+    user_id      INTEGER NOT NULL,
+    ski_id       INTEGER NOT NULL,
+    rental_begin DATE NOT NULL,
+    rental_end   DATE NOT NULL,
+    CONSTRAINT user_id_rkey FOREIGN KEY(user_id) REFERENCES user_rental(user_id),
+    CONSTRAINT ski_id_rkey  FOREIGN KEY(ski_id)  REFERENCES skis(ski_id)
+);
