@@ -29,10 +29,11 @@ try {
 <?php
     foreach ($db->query('SELECT * FROM scriptures') as $row)
     {
-      echo 'book: ' . $row['book'];
-      echo ' chapter: ' . $row['chapter'];
-      echo ' verse:' . $row['verse'];
-      echo ' content:' . $row['content'];
+      echo '<div>book: ' . $row['book'];
+      echo '<br> chapter: ' . $row['chapter'];
+      echo '<br> verse:' . $row['verse'];
+      echo '<br> content:' . $row['content'];
+      echo '</div>';
     };
 ?>
 </div>
