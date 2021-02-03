@@ -32,8 +32,8 @@ try {
       echo '<div><strong>' . $row['book'];
       echo ' ' . $row['chapter'];
       echo ':' . $row['verse'];
-      echo ' - ' . $row['content'];
-      echo '</div>';
+      echo '</strong> - ' . $row['content'];
+      echo '</div><br>';
     };
 ?>
 </div>
