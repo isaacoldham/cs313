@@ -38,7 +38,8 @@ a.menuItem:hover {
 }
 
 .clickableImage {
-    width: 100%;
+    width: 48px;
+    
 }
 
 #wrapper {
