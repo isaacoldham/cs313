@@ -56,21 +56,18 @@ try {
 
   <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
-      <div for="ski1" class="item" id="ski1">
-        <img src="ski1.jpg" class="clickableImage" />
-        <label for="ski1">Rossignol - Black Ops</label>
-        <button type="submit" name="ski1" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski2">
-        <img src="ski2.jpg" class="clickableImage" />
-        <label for="ski2">Dynastar - Menace</label>
-        <button type="submit" name="ski2" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski3">
-        <img src="ski3.jpg" class="clickableImage" />
-        <label for="ski3">Atomic - Vantage 83</label>
-        <button type="submit" name="ski3" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
+      
+    <?php
+  foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
+  {
+    echo '<div class="item">' . $row['make'];
+    echo ' - ' . $row['ski_name'];
+    echo ' ' . $row['length'] . 'cm';
+    echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+    echo '</div><br>';
+  };
+  ?>
+      
       <div class="item" id="ski4">
         <img src="ski4.jpg" class="clickableImage" />
         <label for="ski4">Blizzard - Bonafide</label>
@@ -143,16 +140,7 @@ try {
   </div> -->
   <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  <?php
-  foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
-  {
-    echo '<div class="item">' . $row['make'];
-    echo ' - ' . $row['ski_name'];
-    echo ' ' . $row['length'] . 'cm';
-    echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-    echo '</div><br>';
-  };
-  ?>
+  
 
   <footer>
     <hr>
