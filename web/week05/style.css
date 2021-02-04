@@ -31,10 +31,10 @@ a.menuItem:hover {
 .item {
     border:rgb(60, 70, 70);
     margin: 10px;
-    width: 22%;
-    float:left;
+    width: 100%;
     box-sizing: border-box;
     font-weight: bold;
+    text-align: center;
 }
 
 .clickableImage {
