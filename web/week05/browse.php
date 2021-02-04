@@ -1,5 +1,32 @@
 <?php
 session_start();
+try {
+  $dbUrl = getenv('DATABASE_URL');
+
+  $dbOpts = parse_url($dbUrl);
+
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"], '/');
+
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  //   function getSkis ($skis){
+  //       $statement = $db->prepare('SELECT * FROM skriptures AS s WHERE s.book =:book');
+  //       $statement->bindValue(':book', $skis, PDO::PARAM_STR);
+  //       $statement->execute();
+  //       $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
+  //       $statement->closeCursor();
+  //       return $scriptures;
+  //   }
+} catch (PDOException $ex) {
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +47,9 @@ session_start();
   <header>
     <h1>The Ski Shop</h1>
     <div id="menu">
+      <a class="menuItem" href="">All skis</a>
       <a class="menuItem" href="">Mens skis</a>
       <a class="menuItem" href="">Womens skis</a>
-      <a class="menuItem" href="">Kids skis</a>
     </div>
   </header>
 
@@ -115,6 +142,18 @@ session_start();
     To see a super cool video of the world record ski jump!
   </div> -->
   <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <?php
+  foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
+  {
+    echo '<div>' . $row['make'];
+    echo ' - ' . $row['ski_name'];
+    echo ' ' . $row['length'] . 'cm';
+    echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+    echo '</div><br>';
+  };
+  ?>
+
   <footer>
     <hr>
     Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
