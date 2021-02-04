@@ -146,7 +146,7 @@ try {
   <?php
   foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
   {
-    echo '<div>' . $row['make'];
+    echo '<div class="item">' . $row['make'];
     echo ' - ' . $row['ski_name'];
     echo ' ' . $row['length'] . 'cm';
     echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
