@@ -58,19 +58,17 @@ try {
 
 <?php
 $action = filter_input(INPUT_POST, 'action');
-
+if ($action == NULL) {
+    $action = filter_input(INPUT_GET, 'action');
+}
 switch ($action){
     case 'searchScripture': 
         $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
         $scriptures = getScriptures($book);
         echo $scriptures;
     break;
-
-    
+    default:break;
 }
-
-
-
 ?>
 
 

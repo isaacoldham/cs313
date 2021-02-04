@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+#menu {
+    background-color: rgb(60, 70, 70);
+    color: white;
+    font-style: none;
+    padding: 8px;
+}
+
+a.menuItem {
+    color: white;
+    font-style: bold;
+    text-decoration:none;
+    margin: 3px;
+}
+
+li {
+    list-style-type:none;
+}
+
+a.menuItem:hover {
+    text-decoration: underline;
+}
+
+.item {
+    border:rgb(60, 70, 70);
+    margin: 10px;
+    width: 22%;
+    float:left;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.clickableImage {
+    width: 100%;
+}
+
+#wrapper {
+
+}
+
+.items {
+    font-weight: bold;
+}
