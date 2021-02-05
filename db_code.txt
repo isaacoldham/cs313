@@ -1,0 +1,40 @@
+ALTER TABLE skis
+ADD COLUMN img_url varchar;
+
+INSERT INTO skis (length, ski_name, make, img_url)
+VALUES (180, 'Black Ops', 'Rossignol', 'ski1.jpg');
+
+UPDATE skis
+SET img_url = 'ski1.jpg'
+WHERE ski_id = 1;
+
+INSERT INTO skis (length, ski_name, make, img_url)
+VALUES (175, 'Menace', 'Dynastar', 'ski2.jpg');
+
+INSERT INTO skis (length, ski_name, make, img_url)
+VALUES (172, 'Vantage 83', 'Atomic', 'ski3.jpg');
+
+INSERT INTO skis (length, ski_name, make, img_url)
+VALUES (190, 'Blizzard', 'Bonafide', 'ski4.jpg');
+
+ALTER TABLE skis
+ADD COLUMN gender varchar;
+
+UPDATE skis
+SET gender = 'mens';
+
+ALTER TABLE skis
+RENAME COLUMN gender TO type;
+
+INSERT INTO skis (length, ski_name, make, img_url, type)
+VALUES (150, 'Vantage 75', 'Atomic', 'ski5.jpg', 'womens');
+
+
+INSERT INTO skis (length, ski_name, make, img_url, type)
+VALUES (152, 'Hero Elite Plus', 'Rossignol', 'ski6.jpg', 'womens');
+
+INSERT INTO skis (length, ski_name, make, img_url, type)
+VALUES (154, 'Vantage 79', 'Atomic', 'ski7.jpg', 'womens');
+
+INSERT INTO skis (length, ski_name, make, img_url, type)
+VALUES (156, 'M5 Mantra', 'Volkl', 'ski8.jpg', 'womens');

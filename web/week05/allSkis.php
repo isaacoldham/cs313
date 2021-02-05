@@ -68,12 +68,7 @@ try {
   };
   ?>
       
-      <div class="item" id="ski4">
-        <img src="ski4.jpg" class="clickableImage" />
-        <label for="ski4">Blizzard - Bonafide</label>
-        <button type="submit" name="ski4" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski5">
+      <!-- <div class="item" id="ski5">
         <img src="ski5.jpg" class="clickableImage" />
         <label for="ski5">Atomic - Vantage 75</label>
         <button type="submit" name="ski5" style="text-align:center;" value="true">Add to Cart</button>
@@ -92,7 +87,7 @@ try {
         <img src="ski8.jpg" class="clickableImage" />
         <label for="ski8">Volkl - M5 Mantra</label>
         <button type="submit" name="ski8" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
+      </div> -->
     </div>
 
   </form>
