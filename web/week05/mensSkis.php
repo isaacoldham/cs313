@@ -68,13 +68,13 @@ try {
             var_dump($rows);
 
 
-            // foreach ($rows) {
-            //     echo '<div class="item">' . $row['make'];
-            //     echo ' - ' . $row['ski_name'];
-            //     echo ' ' . $row['length'] . 'cm';
-            //     echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-            //     echo '</div><br>';
-            // };
+            foreach ($row as $rows) {
+                echo '<div class="item">' . $row['make'];
+                echo ' - ' . $row['ski_name'];
+                echo ' ' . $row['length'] . 'cm';
+                echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+                echo '</div><br>';
+            };
             ?>
 
             <!-- <div class="item" id="ski5">
