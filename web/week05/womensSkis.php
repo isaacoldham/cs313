@@ -98,12 +98,12 @@ try {
 
     </form>
 
-    <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
+    <!-- <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <br>
         <a href="viewCart.php">
             <h3>Click here to view your cart!</h3>
         </a>
-    </div>
+    </div> -->
 
     <?php
 
@@ -126,10 +126,10 @@ try {
     }
 
     //echo variable info
-    echo "<div>post</div>";
-    print_r($_POST);
-    echo "<div>session</div>";
-    print_r($_SESSION);
+    // echo "<div>post</div>";
+    // print_r($_POST);
+    // echo "<div>session</div>";
+    // print_r($_SESSION);
 
 
     ?>
@@ -143,11 +143,10 @@ try {
 
 
 
-    <footer>
+    <!-- <footer>
         <hr>
         Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
-    </footer>
-    <?php echo date("D M d, Y G:i a"); ?>
+    </footer> -->
 
 </body>
 
