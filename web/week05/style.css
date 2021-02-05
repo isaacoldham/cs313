@@ -31,7 +31,7 @@ a.menuItem:hover {
 .item {
     border:rgb(60, 70, 70);
     margin: 10px;
-    width: 100%;
+    width: 200px;
     box-sizing: border-box;
     font-weight: bold;
     text-align: center;
@@ -39,11 +39,12 @@ a.menuItem:hover {
 
 .clickableImage {
     width: 48px;
-    
+
 }
 
 #wrapper {
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .items {
