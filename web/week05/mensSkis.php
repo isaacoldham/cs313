@@ -47,15 +47,13 @@ try {
     <header>
         <h1>The Ski Shop</h1>
         <div id="menu">
-            <a class="menuItem" href="">All skis</a>
+            <a class="menuItem" href="allSkis.php">All skis</a>
             <a style="text-decoration: underline;" class="menuItem" href="">Mens skis</a>
-            <a class="menuItem" href="">Womens skis</a>
+            <a class="menuItem" href="womensSkis.php">Womens skis</a>
         </div>
     </header>
-
     
     <h2>Mens Skis</h2>
-
 
     <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
         <div style="text-align:center" id="wrapper">

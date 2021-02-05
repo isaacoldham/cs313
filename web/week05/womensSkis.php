@@ -47,8 +47,8 @@ try {
     <header>
         <h1>The Ski Shop</h1>
         <div id="menu">
-            <a class="menuItem" href="">All skis</a>
-            <a class="menuItem" href="">Mens skis</a>
+            <a class="menuItem" href="allSkis.php">All skis</a>
+            <a class="menuItem" href="mensSkis.php">Mens skis</a>
             <a class="menuItem" href="" style="text-decoration: underline;">Womens skis</a>
         </div>
     </header>
