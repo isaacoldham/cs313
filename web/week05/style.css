@@ -6,6 +6,10 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    text-align:center;
+}
+
 #menu {
     background-color: rgb(60, 70, 70);
     color: white;
@@ -34,6 +38,7 @@ a.menuItem:hover {
     width: 300px;
     box-sizing: border-box;
     font-weight: bold;
+    font-size:1.5em;
     text-align: center;
 }
 

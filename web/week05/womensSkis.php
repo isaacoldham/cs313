@@ -1,31 +1,31 @@
 <?php
 session_start();
 try {
-  $dbUrl = getenv('DATABASE_URL');
+    $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
+    $dbOpts = parse_url($dbUrl);
 
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"], '/');
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"], '/');
 
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  //   function getSkis ($skis){
-  //       $statement = $db->prepare('SELECT * FROM skriptures AS s WHERE s.book =:book');
-  //       $statement->bindValue(':book', $skis, PDO::PARAM_STR);
-  //       $statement->execute();
-  //       $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
-  //       $statement->closeCursor();
-  //       return $scriptures;
-  //   }
+    //   function getSkis ($skis){
+    //       $statement = $db->prepare('SELECT * FROM skriptures AS s WHERE s.book =:book');
+    //       $statement->bindValue(':book', $skis, PDO::PARAM_STR);
+    //       $statement->execute();
+    //       $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
+    //       $statement->closeCursor();
+    //       return $scriptures;
+    //   }
 } catch (PDOException $ex) {
-  echo 'Error!: ' . $ex->getMessage();
-  die();
+    echo 'Error!: ' . $ex->getMessage();
+    die();
 }
 ?>
 
@@ -34,41 +34,51 @@ try {
 <!--https://github.com/isaacoldham/cs313-->
 
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
-  <title>The Ski Shop</title>
-  <script>
-  </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
+    <title>The Ski Shop</title>
+    <script>
+    </script>
 
 </head>
 
 <body>
-  <header>
-    <h1>The Ski Shop</h1>
-    <div id="menu">
-      <a class="menuItem" href="">All skis</a>
-      <a class="menuItem" href="">Mens skis</a>
-      <a class="menuItem" href="" style="text-decoration: underline;">Womens skis</a>
-    </div>
-  </header>
+    <header>
+        <h1>The Ski Shop</h1>
+        <div id="menu">
+            <a class="menuItem" href="">All skis</a>
+            <a class="menuItem" href="">Mens skis</a>
+            <a class="menuItem" href="" style="text-decoration: underline;">Womens skis</a>
+        </div>
+    </header>
+
+    <h2>Womens Skis</h2>
+
+    <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
+        <div style="text-align:center" id="wrapper">
+
+            <?php
+            $type = 'womens';
+            $stmt = $db->prepare('SELECT s.length, s.ski_name, s.make, s.img_url, s.type FROM skis AS s WHERE s.type=:type');
+            $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            echo '<div>the test is after this</div><br>';
+            var_dump($rows);
 
 
-  <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
-    <div style="text-align:center" id="wrapper">
-      
-    <?php
-  foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
-  {
-    echo '<div class="item">' . $row['make'];
-    echo ' - ' . $row['ski_name'];
-    echo ' ' . $row['length'] . 'cm';
-    echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-    echo '</div><br>';
-  };
-  ?>
-      
-      <!-- <div class="item" id="ski5">
+            foreach ($rows as $row) {
+                echo '<div class="item">' . $row['make'];
+                echo ' - ' . $row['ski_name'];
+                echo ' ' . $row['length'] . 'cm';
+                echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+                echo '</div><br>';
+            };
+            ?>
+
+            <!-- <div class="item" id="ski5">
         <img src="ski5.jpg" class="clickableImage" />
         <label for="ski5">Atomic - Vantage 75</label>
         <button type="submit" name="ski5" style="text-align:center;" value="true">Add to Cart</button>
@@ -88,60 +98,60 @@ try {
         <label for="ski8">Volkl - M5 Mantra</label>
         <button type="submit" name="ski8" style="text-align:center;" value="true">Add to Cart</button>
       </div> -->
+        </div>
+
+    </form>
+
+    <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
+        <br>
+        <a href="viewCart.php">
+            <h3>Click here to view your cart!</h3>
+        </a>
     </div>
 
-  </form>
+    <?php
 
-  <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-    <br>
-    <a href="viewCart.php">
-      <h3>Click here to view your cart!</h3>
-    </a>
-  </div>
+    if (isset($_POST['ski1'])) {
+        $_SESSION["ski1"] = $_POST['ski1'];
+    } elseif (isset($_POST['ski2'])) {
+        $_SESSION["ski2"] = $_POST['ski2'];
+    } elseif (isset($_POST['ski3'])) {
+        $_SESSION["ski3"] = $_POST['ski3'];
+    } elseif (isset($_POST['ski4'])) {
+        $_SESSION["ski4"] = $_POST['ski4'];
+    } elseif (isset($_POST['ski5'])) {
+        $_SESSION["ski5"] = $_POST['ski5'];
+    } elseif (isset($_POST['ski6'])) {
+        $_SESSION["ski6"] = $_POST['ski6'];
+    } elseif (isset($_POST['ski7'])) {
+        $_SESSION["ski7"] = $_POST['ski7'];
+    } elseif (isset($_POST['ski8'])) {
+        $_SESSION["ski8"] = $_POST['ski8'];
+    }
 
-  <?php
-
-  if (isset($_POST['ski1'])) {
-    $_SESSION["ski1"] = $_POST['ski1'];
-  } elseif (isset($_POST['ski2'])) {
-    $_SESSION["ski2"] = $_POST['ski2'];
-  } elseif (isset($_POST['ski3'])) {
-    $_SESSION["ski3"] = $_POST['ski3'];
-  } elseif (isset($_POST['ski4'])) {
-    $_SESSION["ski4"] = $_POST['ski4'];
-  } elseif (isset($_POST['ski5'])) {
-    $_SESSION["ski5"] = $_POST['ski5'];
-  } elseif (isset($_POST['ski6'])) {
-    $_SESSION["ski6"] = $_POST['ski6'];
-  } elseif (isset($_POST['ski7'])) {
-    $_SESSION["ski7"] = $_POST['ski7'];
-  } elseif (isset($_POST['ski8'])) {
-    $_SESSION["ski8"] = $_POST['ski8'];
-  }
-
-  //echo variable info
-  echo "<div>post</div>";
-  print_r($_POST);
-  echo "<div>session</div>";
-  print_r($_SESSION);
+    //echo variable info
+    echo "<div>post</div>";
+    print_r($_POST);
+    echo "<div>session</div>";
+    print_r($_SESSION);
 
 
-  ?>
+    ?>
 
-  <br><br><br><br>
-  <!-- <div class="picDiv">
+    <br><br><br><br>
+    <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
     To see a super cool video of the world record ski jump!
   </div> -->
-  <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  
 
-  <footer>
-    <hr>
-    Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
-  </footer>
-  <?php echo date("D M d, Y G:i a"); ?>
+
+    <footer>
+        <hr>
+        Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
+    </footer>
+    <?php echo date("D M d, Y G:i a"); ?>
 
 </body>
 
