@@ -38,13 +38,16 @@ a.menuItem:hover {
 }
 
 .clickableImage {
-    width: 48px;
+    width: 200px;
 
 }
 
 #wrapper {
     display: flex;
     flex-wrap: wrap;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:20px;
 }
 
 .items {
