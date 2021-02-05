@@ -65,10 +65,6 @@ try {
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo '<div>the test is after this</div><br>';
-            var_dump($rows);
-
-
             foreach ($rows as $row) {
                 echo '<div class="item">' . $row['make'];
                 echo ' - ' . $row['ski_name'];
