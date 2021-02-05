@@ -47,26 +47,27 @@ try {
   <header>
     <h1>The Ski Shop</h1>
     <div id="menu">
-      <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
-      <a class="menuItem" href="mensSkis.php">Mens skis</a>
-      <a class="menuItem" href="womensSkis.php">Womens skis</a>
+      <a class="menuItem" href="">All skis</a>
+      <a class="menuItem" href="">Mens skis</a>
+      <a class="menuItem" href="" style="text-decoration: underline;">Womens skis</a>
     </div>
   </header>
 
 
   <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
-
-      <?php
-      foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
-        echo '<div class="item">' . $row['make'];
-        echo ' - ' . $row['ski_name'];
-        echo ' ' . $row['length'] . 'cm';
-        echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-        echo '</div><br>';
-      };
-      ?>
-
+      
+    <?php
+  foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row)
+  {
+    echo '<div class="item">' . $row['make'];
+    echo ' - ' . $row['ski_name'];
+    echo ' ' . $row['length'] . 'cm';
+    echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+    echo '</div><br>';
+  };
+  ?>
+      
       <!-- <div class="item" id="ski5">
         <img src="ski5.jpg" class="clickableImage" />
         <label for="ski5">Atomic - Vantage 75</label>
@@ -134,7 +135,7 @@ try {
   </div> -->
   <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+  
 
   <footer>
     <hr>
