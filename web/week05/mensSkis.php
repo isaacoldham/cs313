@@ -68,7 +68,7 @@ try {
             var_dump($rows);
 
 
-            foreach ($row as $rows) {
+            foreach ($rows as $row) {
                 echo '<div class="item">' . $row['make'];
                 echo ' - ' . $row['ski_name'];
                 echo ' ' . $row['length'] . 'cm';
@@ -140,8 +140,6 @@ try {
     <button onclick="showImage()">Click here</button>
     To see a super cool video of the world record ski jump!
   </div> -->
-    <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 
     <footer>
