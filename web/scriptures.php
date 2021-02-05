@@ -70,9 +70,5 @@ switch ($action){
     default:break;
 }
 ?>
-
-
 </body>
-
-
 </html>

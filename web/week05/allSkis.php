@@ -119,12 +119,10 @@ try {
   }
 
   //echo variable info
-  echo "<div>post</div>";
-  print_r($_POST);
-  echo "<div>session</div>";
-  print_r($_SESSION);
-
-
+  // echo "<div>post</div>";
+  // print_r($_POST);
+  // echo "<div>session</div>";
+  // print_r($_SESSION);
   ?>
 
   <br><br><br><br>
@@ -132,9 +130,6 @@ try {
     <button onclick="showImage()">Click here</button>
     To see a super cool video of the world record ski jump!
   </div> -->
-  <iframe id="video" src="https://www.youtube.com/embed/-RYkapHBVs8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
   <footer>
     <hr>
