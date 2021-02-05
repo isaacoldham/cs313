@@ -31,14 +31,14 @@ a.menuItem:hover {
 .item {
     border:rgb(60, 70, 70);
     margin: 10px;
-    width: 200px;
+    width: 300px;
     box-sizing: border-box;
     font-weight: bold;
     text-align: center;
 }
 
 .clickableImage {
-    width: 200px;
+    width: 300px;
 
 }
 
