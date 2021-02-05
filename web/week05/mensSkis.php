@@ -65,7 +65,7 @@ try {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             echo '<div>the test is after this</div><br>';
-            $print_r($rows);
+            $var_dump($rows);
 
             // foreach ($rows) {
             //     echo '<div class="item">' . $row['make'];
