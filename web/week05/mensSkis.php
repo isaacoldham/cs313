@@ -59,7 +59,7 @@ try {
 
             <?php
             $type = 'mens';
-            $stmt = $db->prepare('SELECT length, ski_name, make, img_url FROM skis AS s WHERE s.type=:type');
+            $stmt = $db->prepare('SELECT s.length, s.ski_name, s.make, s.img_url, s.type FROM skis AS s WHERE s.type=:type');
             $stmt->bindValue(':type', $type, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
