@@ -58,25 +58,33 @@ try {
     </header>
 
     <?php
-    print_r($_POST);
-    echo '<h2>You seached for '. $ski_length .'</h2>';
+    if ($ski_length != NULL) {
+        echo '<h2>You seached for ' . $ski_length . 'cm length skis.</h2>';
+        echo '<div style="text-align:center" id="wrapper">';
+        
+        $stmt = $db->prepare('SELECT s.length, s.ski_name, s.make, s.img_url, s.type FROM skis AS s WHERE s.length=:length');
+        $stmt->bindValue(':length', $ski_length, PDO::PARAM_STR);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($rows != NULL){
+        foreach ($rows as $row) {
+            echo '<div class="item">' . $row['ski_name'];
+            echo ' - <span style="font-weight: none;">' . $row['make'];
+            echo ' ' . $row['length'] . 'cm';
+            echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+            echo '</span></div><br>';
+        };
+        }
+        else {
+            echo '<h2>No skis were found at '.$ski_length.'cm</h2>';
+        }
+    echo '</div>';
+    }
+    else{echo 'There was an error. Please enter a valid ski length'};
     ?>
 
-    <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
-        <div style="text-align:center" id="wrapper">
 
-            <?php
-            // foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
-            //     echo '<div class="item">' . $row['ski_name'];
-            //     echo ' - <span style="font-weight: none;">' . $row['make'];
-            //     echo ' ' . $row['length'] . 'cm';
-            //     echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-            //     echo '</span></div><br>';
-            // };
-            ?>
-        </div>
-
-    </form>
 
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <br>
