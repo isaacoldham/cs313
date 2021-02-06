@@ -54,11 +54,12 @@ try {
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
 
       <form>
-      <span style="color:white;text-align:left;">Search by ski size here!</span>
-      <input type="number" name="searchSize"style="text-align:left">
-    </form>
+        <span style="color:white;text-align:right">Search by ski size here!
+          <input type="number" name="searchSize" style="text-align:right">
+        </span>
+      </form>
     </div>
-    
+
   </header>
 
 
