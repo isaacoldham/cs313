@@ -46,9 +46,9 @@ try {
 <h2>All Skis</h2>
 
 <body>
-  <header>
+  <header id="menu">
     <h1>The Ski Shop</h1>
-    <div id="menu">
+    <div>
       <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
       <a class="menuItem" href="mensSkis.php">Mens skis</a>
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
