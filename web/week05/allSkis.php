@@ -56,14 +56,6 @@ try {
 
   </header>
 
-
-  <form action="searchSkis.php">
-    <span style="color:white;float:right;">Search by ski size here!
-      <input type="number" name="searchSize" style="text-align:right">
-      <input type="submit" name="submit" value="Search">
-    </span>
-  </form>
-
   <h2>All Skis</h2>
 
   <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
@@ -79,28 +71,14 @@ try {
       };
       ?>
 
-      <!-- <div class="item" id="ski5">
-        <img src="ski5.jpg" class="clickableImage" />
-        <label for="ski5">Atomic - Vantage 75</label>
-        <button type="submit" name="ski5" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski6">
-        <img src="ski6.jpg" class="clickableImage" />
-        <label for="ski6">Rossignol - Hero Elite Plus</label>
-        <button type="submit" name="ski6" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski7">
-        <img src="ski7.jpg" class="clickableImage" />
-        <label for="ski7"> Atomic - Vantage 79</label>
-        <button type="submit" name="ski7" style="text-align:center;" value="true">Add to Cart</button>
-      </div>
-      <div class="item" id="ski8">
-        <img src="ski8.jpg" class="clickableImage" />
-        <label for="ski8">Volkl - M5 Mantra</label>
-        <button type="submit" name="ski8" style="text-align:center;" value="true">Add to Cart</button>
-      </div> -->
     </div>
+  </form>
 
+  <form action="searchSkis.php">
+    <div>Have something particular in mind? Search by length here!
+      <input type="number" name="searchSize" style="text-align:right">
+      <input type="submit" name="submit" value="Search">
+    </div>
   </form>
 
   <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
