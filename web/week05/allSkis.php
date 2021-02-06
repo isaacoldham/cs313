@@ -75,7 +75,7 @@ try {
   </form>
 
   <form action="searchSkis.php">
-    <div>Have something particular in mind? Search by length here!
+    <div>Have something particular in mind? Search by length here!<br>
       <input type="number" name="searchSize" style="text-align:right">
       <input type="submit" name="submit" value="Search">
     </div>

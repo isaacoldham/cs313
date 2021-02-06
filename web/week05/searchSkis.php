@@ -57,20 +57,20 @@ try {
     </header>
 
     <?php
-    echo '<h2>You seached for '. var_dump($_SESSION) .'</h2>';
+    echo '<h2>You seached for '. var_dump($_POST[]) .'</h2>';
     ?>
 
     <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
         <div style="text-align:center" id="wrapper">
 
             <?php
-            foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
-                echo '<div class="item">' . $row['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $row['make'];
-                echo ' ' . $row['length'] . 'cm';
-                echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-                echo '</span></div><br>';
-            };
+            // foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
+            //     echo '<div class="item">' . $row['ski_name'];
+            //     echo ' - <span style="font-weight: none;">' . $row['make'];
+            //     echo ' ' . $row['length'] . 'cm';
+            //     echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+            //     echo '</span></div><br>';
+            // };
             ?>
         </div>
 
