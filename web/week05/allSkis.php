@@ -52,15 +52,17 @@ try {
       <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
       <a class="menuItem" href="mensSkis.php">Mens skis</a>
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
-
-      <form action="searchSkis.php">
-        <span style="color:white;float:right;">Search by ski size here!
-          <input type="number" name="searchSize" style="text-align:right">
-        </span>
-      </form>
     </div>
 
   </header>
+
+
+  <form action="searchSkis.php">
+    <span style="color:white;float:right;">Search by ski size here!
+      <input type="number" name="searchSize" style="text-align:right">
+      <input type="submit" name="submit" value="Search">
+    </span>
+  </form>
 
   <h2>All Skis</h2>
 
