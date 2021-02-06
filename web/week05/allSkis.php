@@ -46,17 +46,19 @@ try {
 <h2>All Skis</h2>
 
 <body>
-  <header id="menu">
+  <header>
     <h1>The Ski Shop</h1>
-    <div>
+    <div id="menu">
       <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
       <a class="menuItem" href="mensSkis.php">Mens skis</a>
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
-    </div>
-    <form>
-      <title>Search by ski size here!</title>
-      <input type="number" name="searchSize">
+
+      <form>
+      <span style="color:white;text-align:left;">Search by ski size here!</span>
+      <input type="number" name="searchSize"style="text-align:left">
     </form>
+    </div>
+    
   </header>
 
 
