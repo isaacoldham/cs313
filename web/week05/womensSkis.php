@@ -66,11 +66,11 @@ try {
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($rows as $row) {
-                echo '<div class="item">' . $row['make'];
-                echo ' - ' . $row['ski_name'];
+                echo '<div class="item">' . $row['ski_name'];
+                echo ' - <span style="font-weight: none;">' . $row['make'];
                 echo ' ' . $row['length'] . 'cm';
                 echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-                echo '</div><br>';
+                echo '</span></div><br>';
             };
             ?>
 

@@ -43,6 +43,8 @@ try {
 
 </head>
 
+<h2>All Skis</h2>
+
 <body>
   <header>
     <h1>The Ski Shop</h1>
@@ -51,6 +53,10 @@ try {
       <a class="menuItem" href="mensSkis.php">Mens skis</a>
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
     </div>
+    <form>
+      <title>Search by ski size here!</title>
+      <input type="number" name="searchSize">
+    </form>
   </header>
 
 
@@ -59,11 +65,11 @@ try {
 
       <?php
       foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
-        echo '<div class="item">' . $row['make'];
-        echo ' - ' . $row['ski_name'];
+        echo '<div class="item">' . $row['ski_name'];
+        echo ' - <span style="font-weight: none;">' . $row['make'];
         echo ' ' . $row['length'] . 'cm';
         echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-        echo '</div><br>';
+        echo '</span></div><br>';
       };
       ?>
 
@@ -93,9 +99,6 @@ try {
 
   <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
     <br>
-    <a href="viewCart.php">
-      <h3>Click here to view your cart!</h3>
-    </a>
   </div>
 
   <?php
