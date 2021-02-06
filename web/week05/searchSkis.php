@@ -50,7 +50,7 @@ try {
     <header>
         <h1>The Ski Shop</h1>
         <div id="menu">
-            <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
+            <a style="text-decoration: underline;" class="menuItem" href="allSkis.php">All skis</a>
             <a class="menuItem" href="mensSkis.php">Mens skis</a>
             <a class="menuItem" href="womensSkis.php">Womens skis</a>
         </div>
