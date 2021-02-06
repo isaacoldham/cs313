@@ -77,7 +77,10 @@ try {
         }
         }
         else {
-            echo '<h2>No skis were found at '.$ski_length.'cm</h2>';
+            echo '<div style="text-align:center;">
+                    <h2>No skis were found at '.$ski_length.'cm</h2>
+                    View all of our skis <a href="allSkis.php">here</a>
+                  </div>';
         }
     echo '</div>';
     }

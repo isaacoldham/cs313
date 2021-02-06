@@ -72,9 +72,9 @@ try {
     ?>
 
   </div>
-
+  <br><br> 
   <form action="searchSkis.php" method="post">
-    <div style="font-size=1.5erm;">Have something particular in mind? Search by length here!<br>
+    <div style="font-size=1.5erm;">Have something particular in mind? Search by length here!<br><br>
       <input type="number" name="searchSize" style="text-align:right">
       <input type="submit" name="submit" value="Search">
     </div>
