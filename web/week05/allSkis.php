@@ -58,23 +58,22 @@ try {
 
   <h2>All Skis</h2>
 
-  <form action="searchSkis" method="post" id="formId">
-    <div style="text-align:center" id="wrapper">
 
-      <?php
-      foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
-        echo '<div class="item">' . $row['ski_name'];
-        echo ' - <span style="font-weight: none;">' . $row['make'];
-        echo ' ' . $row['length'] . 'cm';
-        echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
-        echo '</span></div><br>';
-      };
-      ?>
+  <div style="text-align:center" id="wrapper">
 
-    </div>
-  </form>
+    <?php
+    foreach ($db->query('SELECT length, ski_name, make, img_url FROM skis') as $row) {
+      echo '<div class="item">' . $row['ski_name'];
+      echo ' - <span style="font-weight: none;">' . $row['make'];
+      echo ' ' . $row['length'] . 'cm';
+      echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
+      echo '</span></div><br>';
+    };
+    ?>
 
-  <form action="searchSkis.php">
+  </div>
+
+  <form action="searchSkis.php" method="post">
     <div>Have something particular in mind? Search by length here!<br>
       <input type="number" name="searchSize" style="text-align:right">
       <input type="submit" name="submit" value="Search">
