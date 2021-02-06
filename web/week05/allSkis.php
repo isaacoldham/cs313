@@ -53,7 +53,7 @@ try {
       <a class="menuItem" href="mensSkis.php">Mens skis</a>
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
 
-      <form>
+      <form action="searchSkis.php">
         <span style="color:white;float:right;">Search by ski size here!
           <input type="number" name="searchSize" style="text-align:right">
         </span>
@@ -62,6 +62,7 @@ try {
 
   </header>
 
+  <h2>All Skis</h2>
 
   <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
