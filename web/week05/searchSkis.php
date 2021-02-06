@@ -74,14 +74,15 @@ try {
             echo ' ' . $row['length'] . 'cm';
             echo '<img src="' . $row['img_url'] . '" class="clickableImage" />';
             echo '</span></div><br>';
-        };
+        }
         }
         else {
             echo '<h2>No skis were found at '.$ski_length.'cm</h2>';
         }
     echo '</div>';
     }
-    else{echo 'There was an error. Please enter a valid ski length'};
+    else {
+        echo 'There was an error. Please enter a valid ski length';}
     ?>
 
 
