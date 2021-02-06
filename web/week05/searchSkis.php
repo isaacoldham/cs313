@@ -1,5 +1,6 @@
 <?php
 session_start();
+$ski_length = $_POST['searchSize'];
 try {
     $dbUrl = getenv('DATABASE_URL');
 
@@ -57,7 +58,8 @@ try {
     </header>
 
     <?php
-    echo '<h2>You seached for '. print_r($_POST) .'</h2>';
+    print_r($_POST);
+    echo '<h2>You seached for '. $ski_length .'</h2>';
     ?>
 
     <form onsubmit="CheckNotNull()" action="" method="post" id="formId">

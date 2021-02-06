@@ -58,7 +58,7 @@ try {
 
   <h2>All Skis</h2>
 
-  <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
+  <form action="searchSkis" method="post" id="formId">
     <div style="text-align:center" id="wrapper">
 
       <?php
