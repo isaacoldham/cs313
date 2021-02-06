@@ -54,7 +54,7 @@ try {
       <a class="menuItem" href="womensSkis.php">Womens skis</a>
 
       <form>
-        <span style="color:white;text-align:right">Search by ski size here!
+        <span style="color:white;float:right;">Search by ski size here!
           <input type="number" name="searchSize" style="text-align:right">
         </span>
       </form>
