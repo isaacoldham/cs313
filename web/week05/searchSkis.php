@@ -57,7 +57,7 @@ try {
     </header>
 
     <?php
-    echo '<h2>You seached for '. print_r($_POST) .'</h2>';
+    echo '<h2>You seached for '. print_r($_POST[1]) .'</h2>';
     ?>
 
     <form onsubmit="CheckNotNull()" action="" method="post" id="formId">
