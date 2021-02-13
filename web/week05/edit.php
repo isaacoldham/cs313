@@ -75,10 +75,10 @@ if ($_SESSION["login"] != true) {
         <form method="post" action="edit.php">
             <?php
                 echo print_r($ski);
-                echo '<div class="item">' . $ski['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $ski['make'];
-                echo ' ' . $ski['length'] . 'cm</span>';
-                echo '<input type="submit" value="edit" name="' . $ski['ski_name'] . '">';
+                echo '<div class="item">' . $ski[0]['ski_name'];
+                echo ' - <span style="font-weight: none;">' . $ski[0]['make'];
+                echo ' ' . $ski[0]['length'] . 'cm</span>';
+                echo '<input type="submit" value="edit" name="' . $ski[0]['ski_name'] . '">';
                 echo '</div><br>';
             ;
             ?>
