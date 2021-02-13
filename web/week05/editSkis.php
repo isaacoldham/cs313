@@ -70,7 +70,7 @@ if ($_SESSION["login"] != true) {
                 echo '<div>' . $row['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $row['make'];
                 echo ' ' . $row['length'] . 'cm ';
-                echo '</span> <button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button><br>';
+                echo '</span> <button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button>';
                 echo '<button type="submit" formaction="delete.php" name="ski_id" value="'.$row['ski_id'].'">Delete</button>';
                 echo '</div><br><br>';
             };
