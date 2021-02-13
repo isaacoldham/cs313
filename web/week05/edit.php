@@ -77,7 +77,7 @@ if ($_SESSION["login"] != true) {
                 echo ' ' . $ski['length'] . 'cm';
                 echo '</span></div><br>';
                 echo '<input type="submit" value="edit" name="' . $ski['ski_name'] . '">';
-            };
+            ;
             ?>
         </form>
     </div>
