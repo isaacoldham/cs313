@@ -71,7 +71,7 @@ if ($_SESSION["login"] != true) {
                 echo ' - <span style="font-weight: none;">' . $row['make'];
                 echo ' ' . $row['length'] . 'cm';
                 echo '</span></div><br>';
-                echo '<button type="submit" name="'.$row['ski_id'].'">Edit</button>';
+                echo '<button type="submit" value="'.$row['ski_id'].'">Edit</button>';
             };
             ?>
         </form>
