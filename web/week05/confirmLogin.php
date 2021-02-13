@@ -17,7 +17,8 @@ try {
     die();
 }
 
-$stmt = $db->prepare('SELECT username, password FROM user_login WHERE username =:username AND password =:password;');
+
+$stmt = $db->prepare('SELECT username, password FROM user_rental WHERE username =:username AND password =:password;');
 $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
 $stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
 $stmt->execute();
