@@ -60,18 +60,23 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-    <h2>Select a ski to edit</h2>
-
+    <h2>Edit Ski</h2>
+    <?php
+        $ski_id = $_POST["ski_id"];
+        $stmt = $db->prepare('SELECT length, ski_name, make FROM skis WHERE ski_id =:ski_id');
+        $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $ski = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 
     <div style="text-align:center" id="wrapper">
         <form method="post" action="edit.php">
             <?php
-            foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis') as $row) {
-                echo '<div class="item">' . $row['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $row['make'];
-                echo ' ' . $row['length'] . 'cm';
+                echo '<div class="item">' . $ski['ski_name'];
+                echo ' - <span style="font-weight: none;">' . $ski['make'];
+                echo ' ' . $ski['length'] . 'cm';
                 echo '</span></div><br>';
-                echo '<input type="submit" value="edit" name="'.$row['ski_id'].'">';
+                echo '<input type="submit" value="edit" name="' . $ski['ski_name'] . '">';
             };
             ?>
         </form>
