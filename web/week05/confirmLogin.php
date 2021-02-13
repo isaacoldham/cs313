@@ -32,6 +32,7 @@ if($rows != NULL){
 }
 else{
     //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    echo var_dump($rows);
     echo 'rows is null';
     $_SESSION["login"] = false;
 }
