@@ -41,7 +41,7 @@ $type = htmlspecialchars($_POST["type"]);
 echo var_dump($_POST);
 
 echo 'test 3';
-
+echo print_r($_POST);
 $stmt = $db->prepare('UPDATE skis SET ski_name=:ski_name,make=:make,length=:length,type=:type WHERE ski_id =:ski_id;');
 echo 'test 3.1';
 $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
@@ -63,16 +63,4 @@ $ski = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 echo 'test 5';
 
-echo var_dump($ski);
 echo print_r($ski);
-?>
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<?php
-    echo '<br>ski variable: '.print_r($ski);
-    echo '<br>post variable:'.print_r($_POST);
-?>
-
-</body>
-</html>
