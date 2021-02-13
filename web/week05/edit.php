@@ -63,8 +63,7 @@ if ($_SESSION["login"] != true) {
     <h2>Edit Ski</h2>
     <?php
         $ski_id = $_POST["ski_id"];
-        echo var_dump($_POST);
-        $stmt = $db->prepare('SELECT length, ski_name, make FROM skis WHERE ski_id =:ski_id');
+        $stmt = $db->prepare('SELECT ski_id, length, ski_name, make FROM skis WHERE ski_id =:ski_id');
         $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
         $stmt->execute();
         $ski = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -74,7 +73,6 @@ if ($_SESSION["login"] != true) {
         <form method="post" action="changeSkis.php" style="margin-left:auto;margin-right:auto;">
             <?php
                 $_SESSION["ski_id"]=$ski[0]['ski_id'];
-                echo var_dump($_SESSION);
                 echo '<div class="item">Name: <input type="text" name="ski_name" value="'.$ski[0]['ski_name'].'">';
                 echo 'Brand: <input type="text" name="make" value="'.$ski[0]['make'].'">';
                 echo 'Length: <input name="length" type="number" value="'.$ski[0]['length'].'">';
