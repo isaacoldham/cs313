@@ -34,7 +34,10 @@ if ($_SESSION["login"] != true) {
 }
 
 
-$ski_id = $_POST["ski_id"];
+$ski_id = htmlspecialchars($_POST["ski_id"]);
+$make = htmlspecialchars($_POST["make"]);
+$length = htmlspecialchars($_POST["length"]);
+$type = htmlspecialchars($_POST["type"]);
 echo var_dump($_POST);
 
 $stmt = $db->prepare('UPDATE skis SET ski_name=:ski_name,make=:make,length=:length,type=:type WHERE ski_id =:ski_id;');
