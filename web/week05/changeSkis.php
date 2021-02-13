@@ -38,7 +38,6 @@ $ski_id = htmlspecialchars($_POST["ski_id"]);
 $make = htmlspecialchars($_POST["make"]);
 $length = htmlspecialchars($_POST["length"]);
 $type = htmlspecialchars($_POST["type"]);
-echo var_dump($_POST);
 
 echo 'test 3';
 echo print_r($_POST);
