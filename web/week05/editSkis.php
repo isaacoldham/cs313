@@ -60,10 +60,10 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-    <h2>Select a ski to edit or <a href="addSki.php">click here </a>to add a new ski.</h2>
+    <h2>Select a ski to edit or <a href="addSkis.php">click here</a> to add a new ski.</h2>
 
 
-    <div style="text-align:center" id="wrapper">
+    <div style="text-align:center">
         <form method="post" action="edit.php">
             <?php
             foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis ORDER BY ski_id;') as $row) {
