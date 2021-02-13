@@ -63,7 +63,6 @@ if ($_SESSION["login"] != true) {
     <h2>Edit Ski</h2>
     <?php
         $ski_id = $_POST["ski_id"];
-        echo 'The ski id is = '.$ski_id;
         echo var_dump($_POST);
         $stmt = $db->prepare('SELECT length, ski_name, make FROM skis WHERE ski_id =:ski_id');
         $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
@@ -72,13 +71,15 @@ if ($_SESSION["login"] != true) {
     ?>
 
     <div style="text-align:center" id="wrapper">
-        <form method="post" action="edit.php">
+        <form method="post" action="changeSkis.php" style="margin-left:auto;margin-right:auto;">
             <?php
-                echo print_r($ski);
-                echo '<div class="item">' . $ski[0]['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $ski[0]['make'];
-                echo ' ' . $ski[0]['length'] . 'cm</span>';
-                echo '<input type="submit" value="edit" name="' . $ski[0]['ski_name'] . '">';
+                echo '<div class="item">Name: <input type="text" value="'.$ski[0]['ski_name'].'">';
+                echo '<input type="text" value="'.$ski[0]['ski_id'].'" style="display:none">';
+                echo 'Brand: <input type="text" value="'.$ski[0]['make'].'">';
+                echo 'Length: <input type="number" value="'.$ski[0]['length'].'">';
+                echo 'Type: <option name="type" value="mens">';
+                echo 'Type: <option name="type" value="womens">';
+                echo '<input type="submit" value="submit">';
                 echo '</div><br>';
             ;
             ?>
