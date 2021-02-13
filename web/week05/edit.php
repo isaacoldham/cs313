@@ -73,10 +73,10 @@ if ($_SESSION["login"] != true) {
     <div style="text-align:center" id="wrapper">
         <form method="post" action="changeSkis.php" style="margin-left:auto;margin-right:auto;">
             <?php
-                echo '<div class="item">Name: <input type="text" value="'.$ski[0]['ski_name'].'">';
-                echo '<input type="text" value="'.$ski[0]['ski_id'].'" style="display:none">';
-                echo 'Brand: <input type="text" value="'.$ski[0]['make'].'">';
-                echo 'Length: <input type="number" value="'.$ski[0]['length'].'">';
+                echo '<div class="item">Name: <input type="text" name="ski_name" value="'.$ski[0]['ski_name'].'">';
+                echo '<input type="text" name="ski_id" value="'.$ski[0]['ski_id'].'" style="display:none">';
+                echo 'Brand: <input type="text" name="make" value="'.$ski[0]['make'].'">';
+                echo 'Length: <input name="length" type="number" value="'.$ski[0]['length'].'">';
                 echo 'Type: <select name="type">';
                 echo '<option name="type" value="mens">Mens</option><br><option name="type" value="womens">Womens</option></select>';
                 echo '<input type="submit" value="Submit">';
