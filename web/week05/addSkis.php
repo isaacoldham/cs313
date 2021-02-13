@@ -73,8 +73,8 @@ if ($_SESSION["login"] != true) {
         <form method="post" action="add.php" style="margin-left:auto;margin-right:auto;">
             <?php
                 $_SESSION["ski_id"]=$ski[0]['ski_id'];
-                echo '<div class="item">Name: <input type="text" name="ski_name">';
-                echo 'Brand: <input type="text" name="make">';
+                echo '<div class="item">Name: <input type="text" maxlength="30" name="ski_name">';
+                echo 'Brand: <input type="text" name="make" maxlength="15">';
                 echo 'Length: <input name="length" type="number">';
                 echo 'Type: <select name="type">';
                 echo '<option value="mens">Mens</option><br><option value="womens">Womens</option></select>';
