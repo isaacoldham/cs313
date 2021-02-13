@@ -43,10 +43,15 @@ echo var_dump($_POST);
 echo 'test 3';
 
 $stmt = $db->prepare('UPDATE skis SET ski_name=:ski_name,make=:make,length=:length,type=:type WHERE ski_id =:ski_id;');
+echo 'test 3.1';
 $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+echo 'test 3.2';
 $stmt->bindValue(':make', $make, PDO::PARAM_STR);
+echo 'test 3.3';
 $stmt->bindValue(':length', $length, PDO::PARAM_STR);
+echo 'test 3.4';
 $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+echo 'test 3.5';
 $stmt->execute();
 
 echo 'test 4';
