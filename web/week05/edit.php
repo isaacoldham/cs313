@@ -85,17 +85,6 @@ if ($_SESSION["login"] != true) {
             ?>
         </form>
     </div>
-    <br><br>
-    <form action="searchSkis.php" method="post">
-        <div style="font-size=1.5erm;">Have something particular in mind? Search by length here!<br><br>
-            <input type="number" name="searchSize" style="text-align:right">
-            <input type="submit" name="submit" value="Search">
-        </div>
-    </form>
-
-    <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <br>
-    </div>
 
     <br><br><br><br>
     <!-- <div class="picDiv">
@@ -105,7 +94,7 @@ if ($_SESSION["login"] != true) {
 
     <footer style="padding:10px; margin-top:20px;">
         <hr>
-        To add or delete skis, please <a href="login.php">login here</a>.
+        <a href="login.php">Click here</a> to return to editing skis.
     </footer>
 
 </body>

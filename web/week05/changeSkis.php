@@ -46,8 +46,13 @@ $stmt->bindValue(':make', $make, PDO::PARAM_STR);
 $stmt->bindValue(':length', $length, PDO::PARAM_STR);
 $stmt->bindValue(':type', $type, PDO::PARAM_STR);
 $stmt->execute();
-$ski = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt2 = $db->prepare('SELECT * FROM skis WHERE ski_id =:ski_id;');
+$stmt2->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+$stmt2->execute();
+$ski = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 
 echo var_dump($ski);
+echo print_r($ski);
 ?>
