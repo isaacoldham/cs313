@@ -23,14 +23,14 @@ $stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if($rows != NULL){
-    header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
-    $_SESSION["login"] = true;
-}
-else{
-    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
-    $_SESSION["login"] = false;
-}
+// if($rows != NULL){
+//     header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
+//     $_SESSION["login"] = true;
+// }
+// else{
+//     header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+//     $_SESSION["login"] = false;
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
