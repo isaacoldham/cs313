@@ -77,8 +77,8 @@ if ($_SESSION["login"] != true) {
                 echo '<input type="text" value="'.$ski[0]['ski_id'].'" style="display:none">';
                 echo 'Brand: <input type="text" value="'.$ski[0]['make'].'">';
                 echo 'Length: <input type="number" value="'.$ski[0]['length'].'">';
-                echo 'Type: <option name="type" value="mens">';
-                echo 'Type: <option name="type" value="womens">';
+                echo 'Type: <select name="type">';
+                echo '<option name="type" value="mens">Mens</option><br><option name="type" value="womens">Womens</option></select>';
                 echo '<input type="submit" value="submit">';
                 echo '</div><br>';
             ;
