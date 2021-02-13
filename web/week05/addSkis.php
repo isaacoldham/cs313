@@ -75,7 +75,7 @@ if ($_SESSION["login"] != true) {
                 $_SESSION["ski_id"]=$ski[0]['ski_id'];
                 echo '<div class="item">Name: <input type="text" maxlength="30" name="ski_name">';
                 echo 'Brand: <input type="text" name="make" maxlength="15">';
-                echo 'Length: <input name="length" type="number">';
+                echo 'Length: <input name="length" maxlength="4" type="number">';
                 echo 'Type: <select name="type">';
                 echo '<option value="mens">Mens</option><br><option value="womens">Womens</option></select>';
                 echo '<input type="submit" value="Submit"><a href="editSkis.php"><button>Cancel</button></a>';

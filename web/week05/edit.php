@@ -75,7 +75,7 @@ if ($_SESSION["login"] != true) {
                 $_SESSION["ski_id"]=$ski[0]['ski_id'];
                 echo '<div class="item">Name: <input type="text" name="ski_name" maxlength="30" value="'.$ski[0]['ski_name'].'">';
                 echo 'Brand: <input type="text" name="make" maxlength="15" value="'.$ski[0]['make'].'">';
-                echo 'Length: <input name="length" type="number" value="'.$ski[0]['length'].'">';
+                echo 'Length: <input name="length" type="number"maxlength="4" value="'.$ski[0]['length'].'">';
                 echo 'Type: <select name="type">';
                 echo '<option name="type" value="mens">Mens</option><br><option name="type" value="womens">Womens</option></select>';
                 echo '<input type="submit" value="Submit">';
