@@ -28,7 +28,7 @@ session_start();
     </header>
 
     <h2>Please Login</h2>
-    <form method="post" action="editSkis.php" class="login">
+    <form method="post" action="confirmLogin.php" class="login">
         <div style="margin:10px;">
             Please enter your username:
             <input type="text" name="username">

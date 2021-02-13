@@ -26,7 +26,7 @@ try {
   die();
 }
 
-if($_SESSION["login"] = false){
+if($_SESSION["login"] == false){
     header("Location: https://floating-skis.herokuapp.com/week05/login.php");
 }
 
