@@ -72,11 +72,12 @@ if ($_SESSION["login"] != true) {
     <div style="text-align:center" id="wrapper">
         <form method="post" action="edit.php">
             <?php
+                echo print_r($ski);
                 echo '<div class="item">' . $ski['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $ski['make'];
-                echo ' ' . $ski['length'] . 'cm';
-                echo '</span></div><br>';
+                echo ' ' . $ski['length'] . 'cm</span>';
                 echo '<input type="submit" value="edit" name="' . $ski['ski_name'] . '">';
+                echo '</div><br>';
             ;
             ?>
         </form>
