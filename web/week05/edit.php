@@ -79,7 +79,7 @@ if ($_SESSION["login"] != true) {
                 echo 'Length: <input type="number" value="'.$ski[0]['length'].'">';
                 echo 'Type: <select name="type">';
                 echo '<option name="type" value="mens">Mens</option><br><option name="type" value="womens">Womens</option></select>';
-                echo '<input type="submit" value="submit">';
+                echo '<input type="submit" value="Submit">';
                 echo '</div><br>';
             ;
             ?>
