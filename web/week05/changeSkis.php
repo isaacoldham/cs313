@@ -47,8 +47,8 @@ $stmt->bindValue(':length', $length, PDO::PARAM_STR);
 $stmt->bindValue(':type', $type, PDO::PARAM_STR);
 $stmt->execute();
 
-$stmt2 = $db->prepare('SELECT * FROM skis WHERE ski_id =:ski_id;');
-$stmt2->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+$string2 = 'SELECT * FROM skis WHERE ski_id ='.$ski_id;
+$stmt2 = $db->prepare($string2);
 $stmt2->execute();
 $ski = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
