@@ -18,13 +18,14 @@ try {
 }
 
 
-$stmt = $db->prepare('SELECT username, password FROM user_rental WHERE username =:username AND password =:password;');
+$stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username AND password =:password;');
 $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
 $stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION["rows"] = $rows;
 
+error_log(print_r($rows, true));
 if($rows != NULL){
     //header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
     echo 'rows is not null';
