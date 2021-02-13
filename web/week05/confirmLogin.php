@@ -12,27 +12,25 @@ try {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
 } catch (PDOException $ex) {
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
 
-$stmt = $db->query('SELECT username, password FROM user_login WHERE username =:username AND password =:password');
+$stmt = $db->prepare('SELECT username, password FROM user_login WHERE username =:username AND password =:password;');
 $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
 $stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-// if($rows != NULL){
-//     header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
-//     $_SESSION["login"] = true;
-// }
-// else{
-//     header("Location: https://floating-skis.herokuapp.com/week05/login.php");
-//     $_SESSION["login"] = false;
-// }
+if($rows != NULL){
+    header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
+    $_SESSION["login"] = true;
+}
+else{
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    $_SESSION["login"] = false;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
