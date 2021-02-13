@@ -73,6 +73,7 @@ if ($_SESSION["login"] != true) {
         <form method="post" action="edit.php">
             <?php
                 echo print_r($ski);
+                echo var_dump($ski);
                 echo '<div class="item">' . $ski['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $ski['make'];
                 echo ' ' . $ski['length'] . 'cm</span>';
