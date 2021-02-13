@@ -14,6 +14,38 @@ try {
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+    function findID() {
+        $statement = $db->prepare('SELECT id FROM scriptures AS s WHERE s.book =:book');
+        $statement->bindValue(':book', $book, PDO::PARAM_STR);
+        $statement->execute();
+        $scriptures = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+    }
+
+    if($_POST != null) {
+        $book = $_POST['book'];
+        $chapter = $_POST['chapter'];
+        $verse = $_POST['verse'];
+        $content = $_POST['content'];
+
+        $statement = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+        $statement->bindValue(':book', $book, PDO::PARAM_STR);
+        $statement->bindValue(':chapter', $chapter, PDO::PARAM_STR);
+        $statement->bindValue(':verse', $verse, PDO::PARAM_STR);
+        $statement->bindValue(':content', $content, PDO::PARAM_STR);
+        $statement->execute();
+        $rowsCounted = $statement->rowCount();
+
+        $statement2 = $db->prepare('INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:scripture_id, :topic_id)');
+        $statement2->bindValue(':scipture_id', $scripture, PDO::PARAM_STR);
+        $statement2->bindValue(':topic_id', $chapter, PDO::PARAM_STR);
+        $statement2->execute();
+        $rowsCounted = $statement->rowCount();
+    }
+
+
+
     function getScriptures($book)
     {
         $statement = $db->prepare('SELECT * FROM scriptures AS s WHERE s.book =:book');
@@ -49,7 +81,7 @@ try {
         ?>
     </div>
 
-    <form action="display_scriptures.php" method="post">
+    <form action="scriptures.php">
         <div>Please enter a book:</div>
         <input type="text" name="book">
         <div>Please enter a chapter:</div>
