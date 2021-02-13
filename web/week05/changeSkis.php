@@ -35,6 +35,7 @@ if ($_SESSION["login"] != true) {
 
 
 $ski_id = htmlspecialchars($_POST["ski_id"]);
+$ski_name = htmlspecialchars($_POST["ski_name"]);
 $make = htmlspecialchars($_POST["make"]);
 $length = htmlspecialchars($_POST["length"]);
 $type = htmlspecialchars($_POST["type"]);
@@ -44,6 +45,7 @@ echo print_r($_POST);
 $stmt = $db->prepare('UPDATE skis SET ski_name=:ski_name,make=:make,length=:length,type=:type WHERE ski_id =:ski_id;');
 echo 'test 3.1';
 $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+$stmt->bindValue(':ski_name', $ski_name, PDO::PARAM_STR);
 echo 'test 3.2';
 $stmt->bindValue(':make', $make, PDO::PARAM_STR);
 echo 'test 3.3';
