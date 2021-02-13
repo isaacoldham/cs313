@@ -66,7 +66,7 @@ if ($_SESSION["login"] != true) {
     <div style="text-align:center" id="wrapper">
         <form method="post" action="edit.php">
             <?php
-            foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis') as $row) {
+            foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis ORDER BY ski_id;') as $row) {
                 echo '<div class="item">' . $row['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $row['make'];
                 echo ' ' . $row['length'] . 'cm';
