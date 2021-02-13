@@ -38,3 +38,10 @@ VALUES (154, 'Vantage 79', 'Atomic', 'ski7.jpg', 'womens');
 
 INSERT INTO skis (length, ski_name, make, img_url, type)
 VALUES (156, 'M5 Mantra', 'Volkl', 'ski8.jpg', 'womens');
+
+ALTER TABLE user_rental
+ADD COLUMN username varchar,
+ADD COLUMN password varchar;
+
+INSERT INTO user_rental (first_name, last_name, username, password)
+VALUES ('Billy', 'Joe', 'billybobjoe', 'asupersecurepassword');

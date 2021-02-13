@@ -2,9 +2,7 @@
 session_start();
 try {
   $dbUrl = getenv('DATABASE_URL');
-
   $dbOpts = parse_url($dbUrl);
-
   $dbHost = $dbOpts["host"];
   $dbPort = $dbOpts["port"];
   $dbUser = $dbOpts["user"];
@@ -27,6 +25,11 @@ try {
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+
+if($_SESSION["login"] = false){
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+}
+
 ?>
 
 <!DOCTYPE html>

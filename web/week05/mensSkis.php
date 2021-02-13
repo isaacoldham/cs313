@@ -145,8 +145,8 @@ try {
 
 
     <footer>
-        <!-- <hr>
-    Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b> -->
+        <hr>
+        To add or delete skis, please <a href="login.php">login here</a>.
     </footer>
 
 </body>
