@@ -60,24 +60,29 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-    <h2>Select a ski to edit or <a href="addSki.php">click here </a>to add a new ski.</h2>
-
+    <h2>Edit Ski</h2>
+    <?php
+        $ski_id = $_POST["ski_id"];
+        $stmt = $db->prepare('SELECT ski_id, length, ski_name, make FROM skis WHERE ski_id =:ski_id');
+        $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $ski = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 
     <div style="text-align:center" id="wrapper">
-        <form method="post" action="edit.php">
+        <form method="post" action="add.php" style="margin-left:auto;margin-right:auto;">
             <?php
-            foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis ORDER BY ski_id;') as $row) {
-                echo '<div class="item">' . $row['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $row['make'];
-                echo ' ' . $row['length'] . 'cm';
-                echo '</span><button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button><br></div>';
-            };
+                $_SESSION["ski_id"]=$ski[0]['ski_id'];
+                echo '<div class="item">Name: <input type="text" name="ski_name">';
+                echo 'Brand: <input type="text" name="make">';
+                echo 'Length: <input name="length" type="number">';
+                echo 'Type: <select name="type">';
+                echo '<option value="mens">Mens</option><br><option value="womens">Womens</option></select>';
+                echo '<input type="submit" value="Submit"><a href="editSkis.php"><button>Cancel</button></a>';
+                echo '</div><br>';
+            ;
             ?>
         </form>
-    </div>
-
-    <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <br>
     </div>
 
     <br><br><br><br>
@@ -88,7 +93,7 @@ if ($_SESSION["login"] != true) {
 
     <footer style="padding:10px; margin-top:20px;">
         <hr>
-        To add or delete skis, please <a href="login.php">login here</a>.
+        <a href="editSkis.php">Click here</a> to return to editing skis.
     </footer>
 
 </body>
