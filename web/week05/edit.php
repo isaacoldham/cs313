@@ -64,6 +64,7 @@ if ($_SESSION["login"] != true) {
     <?php
         $ski_id = $_POST["ski_id"];
         echo 'The ski id is = '.$ski_id;
+        echo var_dump($_POST);
         $stmt = $db->prepare('SELECT length, ski_name, make FROM skis WHERE ski_id =:ski_id');
         $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
         $stmt->execute();
