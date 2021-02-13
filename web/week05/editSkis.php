@@ -69,8 +69,10 @@ if ($_SESSION["login"] != true) {
             foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis ORDER BY ski_id;') as $row) {
                 echo '<div>' . $row['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $row['make'];
-                echo ' ' . $row['length'] . 'cm';
-                echo '</span><button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button><br></div>';
+                echo ' ' . $row['length'] . 'cm ';
+                echo '</span> <button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button><br>';
+                echo '<button type="submit" formaction="delete.php" name="ski_id" value="'.$row['ski_id'].'">Delete</button>';
+                echo '</div><br><br>';
             };
             ?>
         </form>
