@@ -18,9 +18,13 @@ try {
 }
 
 
+$username = htmlspecialchars($_POST["username"]);
+$password = htmlspecialchars($_POST["password"]);
+
+
 $stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username AND password =:password;');
-$stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
-$stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
+$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION["rows"] = $rows;
