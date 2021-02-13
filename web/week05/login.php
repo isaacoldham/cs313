@@ -43,6 +43,11 @@ session_start();
 
     <br><br>
 
+    <?php
+        echo var_dump($_SESSION["rows"]);
+
+    ?>
+
     <br><br><br><br>
     <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>

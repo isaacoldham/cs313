@@ -23,6 +23,7 @@ $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_STR);
 $stmt->bindValue(':password', $_POST["password"], PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$_SESSION["rows"] = $rows;
 
 if($rows != NULL){
     header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
@@ -33,6 +34,8 @@ else{
     $_SESSION["login"] = false;
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
