@@ -25,16 +25,14 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $_SESSION["rows"] = $rows;
 
-error_log(print_r($rows, true));
+//error_log(print_r($rows, true));
+
 if($rows != NULL){
-    //header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
-    echo 'rows is not null';
+    header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
     $_SESSION["login"] = true;
 }
 else{
-    //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
-    echo var_dump($rows);
-    echo 'rows is null';
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     $_SESSION["login"] = false;
 }
 ?>

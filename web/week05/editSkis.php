@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+//Connect to the database
 try {
   $dbUrl = getenv('DATABASE_URL');
   $dbOpts = parse_url($dbUrl);
@@ -26,7 +28,8 @@ try {
   die();
 }
 
-if($_SESSION["login"] == false){
+//If the $_SESSION["login"] is not equal to true then send the user back to the login page.
+if($_SESSION["login"] != true){
     header("Location: https://floating-skis.herokuapp.com/week05/login.php");
 }
 
