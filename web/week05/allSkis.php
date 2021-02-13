@@ -43,8 +43,6 @@ try {
 
 </head>
 
-<h2>All Skis</h2>
-
 <body>
   <header>
     <h1>The Ski Shop</h1>
@@ -84,33 +82,6 @@ try {
     <br>
   </div>
 
-  <?php
-
-  // if (isset($_POST['ski1'])) {
-  //   $_SESSION["ski1"] = $_POST['ski1'];
-  // } elseif (isset($_POST['ski2'])) {
-  //   $_SESSION["ski2"] = $_POST['ski2'];
-  // } elseif (isset($_POST['ski3'])) {
-  //   $_SESSION["ski3"] = $_POST['ski3'];
-  // } elseif (isset($_POST['ski4'])) {
-  //   $_SESSION["ski4"] = $_POST['ski4'];
-  // } elseif (isset($_POST['ski5'])) {
-  //   $_SESSION["ski5"] = $_POST['ski5'];
-  // } elseif (isset($_POST['ski6'])) {
-  //   $_SESSION["ski6"] = $_POST['ski6'];
-  // } elseif (isset($_POST['ski7'])) {
-  //   $_SESSION["ski7"] = $_POST['ski7'];
-  // } elseif (isset($_POST['ski8'])) {
-  //   $_SESSION["ski8"] = $_POST['ski8'];
-  // }
-
-  //echo variable info
-  // echo "<div>post</div>";
-  // print_r($_POST);
-  // echo "<div>session</div>";
-  // print_r($_SESSION);
-  ?>
-
   <br><br><br><br>
   <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
@@ -119,7 +90,7 @@ try {
 
   <footer>
     <hr>
-    Education is the difference between wishing you could help others and being able to help them. <b>- President Nelson</b>
+    To add or delete skis, please <a href="login.php">login here</a>.
   </footer>
   <?php echo date("D M d, Y G:i a"); ?>
 

@@ -59,3 +59,11 @@ a.menuItem:hover {
 .items {
     font-weight: bold;
 }
+
+.login {
+    text-align:center;
+    padding: 40px;
+    margin: 40px;
+    border:rgb(60, 70, 70);
+    border-radius: 5%;
+}
