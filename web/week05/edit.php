@@ -63,6 +63,7 @@ if ($_SESSION["login"] != true) {
     <h2>Edit Ski</h2>
     <?php
         $ski_id = $_POST["ski_id"];
+        echo 'The ski id is = '.$ski_id;
         $stmt = $db->prepare('SELECT length, ski_name, make FROM skis WHERE ski_id =:ski_id');
         $stmt->bindValue(':ski_id', $ski_id, PDO::PARAM_STR);
         $stmt->execute();
@@ -73,7 +74,6 @@ if ($_SESSION["login"] != true) {
         <form method="post" action="edit.php">
             <?php
                 echo print_r($ski);
-                echo var_dump($ski);
                 echo '<div class="item">' . $ski['ski_name'];
                 echo ' - <span style="font-weight: none;">' . $ski['make'];
                 echo ' ' . $ski['length'] . 'cm</span>';
