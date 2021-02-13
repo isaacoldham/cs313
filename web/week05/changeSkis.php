@@ -53,6 +53,6 @@ $stmt2->execute();
 $ski = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 
-echo var_dump($ski);
+echo var_dump($ski).'|||||||||<br>||||||';
 echo print_r($ski);
 ?>
