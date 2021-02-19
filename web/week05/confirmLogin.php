@@ -36,7 +36,7 @@ $thisHashedPassword = 'test222';
         $stmt2->bindValue(':thisHashedPassword', $thisHashedPassword, PDO::PARAM_STR);
         $stmt2->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
-        $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     }
 //}
 
