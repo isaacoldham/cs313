@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 try {
     $dbUrl = getenv('DATABASE_URL');
     $dbOpts = parse_url($dbUrl);
@@ -23,6 +28,7 @@ $password = htmlspecialchars($_POST["password"]);
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 if (password_verify($password, $hashedPassword)) {
+    var_dump($hashedPassword);
     $queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
     $stmt2 = $db->prepare($queryStmt);
     $stmt2->execute();
