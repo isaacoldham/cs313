@@ -29,14 +29,14 @@ error_log(print_r($rows, true));
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$hashedPassword = 'thisisatest';
+$hashedPassword = 'test222';
 
 //if (password_verify($password, $hashedPassword)) {
     var_dump($hashedPassword);
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
         $stmt2 = $db->prepare('UPDATE user_rental SET password=:hashedPassword WHERE username =:username;');
-        $stmt->bindValue(':username', $hashedPassword, PDO::PARAM_STR);
+        $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
