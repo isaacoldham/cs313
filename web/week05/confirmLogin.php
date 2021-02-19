@@ -25,20 +25,18 @@ try {
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$thisHashedPassword = 'test222';
 
-//if (password_verify($password, $hashedPassword)) {
+if (password_verify($password, $hashedPassword)) {
     var_dump($hashedPassword);
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
-        $stmt2 = $db->prepare('UPDATE user_rental SET password=:thisHashedPassword WHERE username =:username;');
-        var_dump($thisHashedPassword);
-        $stmt2->bindValue(':thisHashedPassword', $thisHashedPassword, PDO::PARAM_STR);
+        $stmt2 = $db->prepare('UPDATE user_rental SET password=:hashedPassword WHERE username =:username;');
+        $stmt2->bindValue(':hashedPassword', $thisHashedPassword, PDO::PARAM_STR);
         $stmt2->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
     }
-//}
+}
 
 // $stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username AND password =:password;');
 // $stmt->bindValue(':username', $username, PDO::PARAM_STR);
