@@ -28,6 +28,13 @@ session_start();
     </header>
 
     <h2>Please Login</h2>
+
+    <?php
+    if ($_SESSION["badLogin"] = true) {
+        echo '<div style="color:red;">There was an error with your login. Please try again.</div>';
+    }
+    ?>
+
     <form method="post" action="confirmLogin.php" class="login">
         <div style="margin:10px;">
             Please enter your username:
