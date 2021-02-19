@@ -31,7 +31,7 @@ if (password_verify($password, $hashedPassword)) {
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
         $stmt2 = $db->prepare('UPDATE user_rental SET password=:hashedPassword WHERE username =:username;');
-        $stmt2->bindValue(':hashedPassword', $thisHashedPassword, PDO::PARAM_STR);
+        $stmt2->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
         $stmt2->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
