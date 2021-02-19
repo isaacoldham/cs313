@@ -23,6 +23,9 @@ try {
 }
 
 
+error_log(print_r($rows, true));
+
+
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -33,7 +36,7 @@ $hashedPassword = 'thisisatest';
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
         $stmt2 = $db->prepare('UPDATE user_rental SET password=:hashedPassword WHERE username =:username;');
-        $stmt->bindValue(':hashedPassword', $hashedPassword, PDO::PARAM_STR);
+        $stmt->bindValue(':username', $hashedPassword, PDO::PARAM_STR);
         $stmt->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -47,7 +50,6 @@ $hashedPassword = 'thisisatest';
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // $_SESSION["rows"] = $rows;
 
-// //error_log(print_r($rows, true));
 
 // if ($rows != NULL) {
 //     $_SESSION["login"] = true;
