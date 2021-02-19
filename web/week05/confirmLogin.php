@@ -32,9 +32,9 @@ $thisHashedPassword = 'test222';
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
         $stmt2 = $db->prepare('UPDATE user_rental SET password=:thisHashedPassword WHERE username =:username;');
-        var_dump($hashedPassword);
-        $stmt->bindValue(':thisHashedPassword', $thisHashedPassword, PDO::PARAM_STR);
-        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        var_dump($thisHashedPassword);
+        $stmt2->bindValue(':thisHashedPassword', $thisHashedPassword, PDO::PARAM_STR);
+        $stmt2->bindValue(':username', $username, PDO::PARAM_STR);
         $stmt2->execute();
         $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
