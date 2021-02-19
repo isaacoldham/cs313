@@ -24,7 +24,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 if (password_verify($password, $hashedPassword)) {
     $queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
-    $stmt2 = $db->prepare('UPDATE');
+    $stmt2 = $db->prepare($queryStmt);
     $stmt2->execute();
     $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
