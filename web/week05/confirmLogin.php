@@ -24,7 +24,7 @@ try {
 
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
-//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 $thisHashedPassword = 'test222';
 
 //if (password_verify($password, $hashedPassword)) {
@@ -48,7 +48,7 @@ $thisHashedPassword = 'test222';
 // $_SESSION["rows"] = $rows;
 
 //
-error_log(print_r($rows, true));
+error_log(print_r($rows2, true));
 
 
 // if ($rows != NULL) {
