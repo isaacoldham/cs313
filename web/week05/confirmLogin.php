@@ -22,10 +22,6 @@ try {
     die();
 }
 
-
-error_log(print_r($rows, true));
-
-
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -49,6 +45,9 @@ $hashedPassword = 'test222';
 // $stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // $_SESSION["rows"] = $rows;
+
+//
+error_log(print_r($rows, true));
 
 
 // if ($rows != NULL) {
