@@ -25,9 +25,10 @@ try {
 
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
-$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = 'thisisatest';
 
-if (password_verify($password, $hashedPassword)) {
+//if (password_verify($password, $hashedPassword)) {
     var_dump($hashedPassword);
     if ($username != null && $hashedPassword != null) {
         //$queryStmt = 'UPDATE user_rental SET password='.$hashedPassword.' WHERE username ='.$username.';';
@@ -37,7 +38,7 @@ if (password_verify($password, $hashedPassword)) {
         $stmt2->execute();
         $rows2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-}
+//}
 
 // $stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username AND password =:password;');
 // $stmt->bindValue(':username', $username, PDO::PARAM_STR);
