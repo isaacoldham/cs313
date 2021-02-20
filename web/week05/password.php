@@ -39,7 +39,7 @@ if ($rows != NULL) {
 } else {
     $_SESSION["login"] = false;
     print_r($hashedPassword);
-    //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     die();
 }
 ?>
