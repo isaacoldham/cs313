@@ -71,6 +71,7 @@ if ($rows != NULL) {
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
     print_r($hashedPassword);
+    echo '<div>$2y$10$qlhRNGy.KyKm/0yN9c1ryOscnVNOUbGu3OFWZ8JksU0CIcK5.j746</div>';
     echo '<div>$2y$10$VaRX/5eP3RG98/IRNMfiZuXP.7Tr37qC0eBsuYx9UXOymOjJvsE1O$2y$10$VaRX/5eP3RG98/IRNMfiZuXP.7Tr37qC0eBsuYx9UXOymOjJvsE1O</div>';
     //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     die();
