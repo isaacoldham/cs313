@@ -60,7 +60,7 @@ $_SESSION["rows"] = $rows;
 
 
 
-error_log(print_r($rows1, true));
+error_log(print_r($rows, true));
 
 if (password_verify($rows, $hashedPassword)) {
     $_SESSION["login"] = true;
