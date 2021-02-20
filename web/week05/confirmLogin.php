@@ -24,6 +24,7 @@ try {
 
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
+$saltOptions = '';
 
 if ($username != null && $password != null) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT, 'thisIsASalt');
@@ -62,7 +63,7 @@ $_SESSION["rows"] = $rows;
 
 error_log(print_r($rows, true));
 
-if (password_verify($rows["password"], $hashedPassword)) {
+if (password_verify($password, $rows["password"])) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
