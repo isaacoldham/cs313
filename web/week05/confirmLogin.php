@@ -24,14 +24,15 @@ try {
 
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
-if ($username != null && $hashedPassword != null) {
+
+if ($username != null && $password != null) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 }
 else{
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
     echo 'test numero uno';
-    //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     die();
 }
 
@@ -69,7 +70,7 @@ if ($rows != NULL) {
 } else {
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
-    //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     print_r($hashedPassword);
     die();
 }
