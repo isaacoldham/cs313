@@ -30,7 +30,8 @@ if ($username != null && $hashedPassword != null) {
 else{
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
-    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    echo 'test numero uno';
+    //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
     die();
 }
 
