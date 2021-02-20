@@ -59,7 +59,7 @@ if (password_verify($password, $hashedPassword)) {
     $_SESSION["rows"] = $rows;
 }
 
-error_log(print_r($rows2, true));
+error_log(print_r($rows1, true));
 
 
 if ($rows != NULL) {
@@ -71,8 +71,8 @@ if ($rows != NULL) {
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
     print_r($hashedPassword);
+    echo '<div>$2y$10$VaRX/5eP3RG98/IRNMfiZuXP.7Tr37qC0eBsuYx9UXOymOjJvsE1O$2y$10$VaRX/5eP3RG98/IRNMfiZuXP.7Tr37qC0eBsuYx9UXOymOjJvsE1O</div>';
     //header("Location: https://floating-skis.herokuapp.com/week05/login.php");
-    print_r($hashedPassword);
     die();
 }
 ?>
@@ -83,6 +83,7 @@ if ($rows != NULL) {
 
 <body>
     <div>Please wait while you are redirected.</div>
+    <div>
 </body>
 
 </html>
