@@ -50,14 +50,21 @@ else{
 // }
 
 
-if (password_verify($password, $hashedPassword)) {
-    $stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username AND password =:password;');
+
+    $stmt = $db->prepare('SELECT first_name, password FROM user_rental WHERE username =:username /*AND password =:password*/;');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+    //$stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["rows"] = $rows;
-}
+
+    if (password_verify($rows, $hashedPassword)) {
+        $_SESSION["login"] = true;
+        $_SESSION["badLogin"] = false;
+        header("Location: https://floating-skis.herokuapp.com/week05/editSkis.php");
+        die();
+    }
+
 
 error_log(print_r($rows1, true));
 
