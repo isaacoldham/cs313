@@ -53,7 +53,7 @@ if ($_SESSION["login"] != true) {
     <header>
         <h1>The Ski Shop</h1>
         <div id="menu">
-            <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
+            <a class="menuItem" href="allSkis.php">All skis</a>
             <a class="menuItem" href="mensSkis.php">Mens skis</a>
             <a class="menuItem" href="womensSkis.php">Womens skis</a>
         </div>
@@ -90,7 +90,7 @@ if ($_SESSION["login"] != true) {
 
     <footer style="padding:10px; margin-top:20px;">
         <hr>
-        To add or delete skis, please <a href="login.php">login here</a>.
+        To log out <a href="logOut.php">click here</a>.
     </footer>
 
 </body>
