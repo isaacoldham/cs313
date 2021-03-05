@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Clickity</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='test.js'>console.log("does this even work?");</script>
+    <script src='test.js'>
+        function addOnClick() {
+            var myNum = document.getElementById("my_number").value;
+            console.log(myNum);
+            myNum += 1;
+        }
+    </script>
 </head>
+
 <body>
     <form style="text-align:center;">
         <h1 id="my_number">1</div>
-        <button onclick="addToClick()">Click Me!</button>
+            <button onclick="addOnClick()">Click Me!</button>
     </form>
 </body>
+
 </html>
