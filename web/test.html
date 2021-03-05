@@ -9,13 +9,9 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script>
         function addOnClick() {
-          document.getElementById("my_number").innerHTML = "YOU CLICKED ME!";
+            var myNum = document.getElementById("my_number").value;
+            document.getElementById("my_number").innerHTML = myNum;
         }
-        </script>
-    <script>
-        window.addEventListener('load', function () {
-            console.log('This function is executed once the page is fully loaded');
-        });
     </script>
 </head>
 
