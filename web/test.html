@@ -10,6 +10,8 @@
     <script>
         function addOnClick() {
             var myNum = document.getElementById("my_number").value;
+            ++myNum;
+            console.log(myNum);
             document.getElementById("my_number").innerHTML = myNum;
         }
     </script>
