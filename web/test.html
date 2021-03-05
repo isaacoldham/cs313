@@ -10,11 +10,11 @@
     <script>
         function addOnClick() {
             var myNum = document.getElementById("my_number").innerHTML;
-            console.log(myNum);
+            console.log(myNum + "before parse");
             parseInt(myNum);
             myNum += 1;
-            console.log(myNum);
-            document.getElementById("my_number").innerHTML.replace = myNum;
+            console.log(myNum + "after parse");
+            document.getElementById("my_number").innerHTML = myNum;
             document.getElementById("my_number").value = myNum;
         }
     </script>
