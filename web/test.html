@@ -7,13 +7,18 @@
     <title>Clickity</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='test.js'>
+    <!-- <script src='test.js'>
         function addOnClick() {
             var myNum = document.getElementById("my_number").value;
             console.log(myNum);
             myNum += 1;
             document.getElementById("my_number").innerHTML = myNum;
         }
+    </script> -->
+    <script>
+        window.addEventListener('load', function () {
+            console.log('This function is executed once the page is fully loaded');
+        });
     </script>
 </head>
 
