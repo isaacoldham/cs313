@@ -68,12 +68,12 @@ if (password_verify($password, $rows[0]["password"])) {
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
     die();
 }
-if ($rows != NULL) {
+/*if ($rows != NULL) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
     die();
-} else {
+}*/ else {
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
