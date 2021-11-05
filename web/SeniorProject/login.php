@@ -45,7 +45,7 @@ session_start();
     </form>
 
     <br><br>
-    <div>Testing!!!!!</div>
+    <div>Don't have an account? <a href="sign_up">Sign up here!</a></div>
 
 
     <br><br><br><br>
