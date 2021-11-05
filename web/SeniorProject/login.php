@@ -10,7 +10,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" description="Ski Shop">
-    <title>The Ski Shop</title>
+    <title>The RD Converter</title>
     <script>
     </script>
 
@@ -18,12 +18,8 @@ session_start();
 
 <body>
     <header>
-        <h1>The Ski Shop</h1>
-        <div id="menu">
-            <a style="text-decoration: underline;" class="menuItem" href="">All skis</a>
-            <a class="menuItem" href="mensSkis.php">Mens skis</a>
-            <a class="menuItem" href="womensSkis.php">Womens skis</a>
-        </div>
+        <h1>The RD Converter</h1>
+        <div id="menu"> </div>
 
     </header>
 
