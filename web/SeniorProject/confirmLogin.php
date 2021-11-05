@@ -62,7 +62,14 @@ $_SESSION["rows"] = $rows;
 error_log(print_r($rows, true));
 print_r($rows);
 
+/*This checks a password hash against the provided password
 if (password_verify($password, $rows[0]["password"])) {
+    $_SESSION["login"] = true;
+    $_SESSION["badLogin"] = false;
+    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+    die();
+}*/
+if ($password == $rows[0]["password"]) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
