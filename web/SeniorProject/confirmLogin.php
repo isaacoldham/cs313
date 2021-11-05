@@ -31,7 +31,7 @@ if ($username != null && $password != null) {
 } else {
     $_SESSION["login"] = false;
     $_SESSION["badLogin"] = true;
-    header("Location: https://floating-skis.herokuapp.com/week05/login.php");
+    header("Location: https://floating-skis.herokuapp.com/SeniorProject/login.php");
     die();
 }
 
