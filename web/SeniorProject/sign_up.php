@@ -23,25 +23,33 @@ session_start();
 
     </header>
 
-    <h2>Please Login</h2>
+    <h2>Sign up Here!</h2>
 
     <?php
-    if ($_SESSION["badLogin"] = true) {
+    /*if ($_SESSION["badLogin"] = true) {
         echo '<div style="color:red;">There was an error with your login. Please try again.</div>';
-    }
+    }*/
     ?>
 
     <form method="post" action="addLogin.php" class="login">
         <div style="margin:10px;">
-            Please enter a username:
+            First Name:
+            <input type="text" name="first_name">
+        </div>
+        <div style="margin:10px;">
+            Last Name:
+            <input type="text" name="last_name">
+        </div>
+        <div style="margin:10px;">
+            Username:
             <input type="text" name="username">
         </div>
         <div style="margin-bottom:10px;">
-            Please enter a password:
+            Password:
             <input type="password" name="password">
         </div>
         <div style="margin-bottom:10px;">
-            Please re-enter your password:
+            Ry-type your password:
             <input type="password" name="password2">
         </div>
 
@@ -49,7 +57,7 @@ session_start();
     </form>
 
     <br><br>
-    
+
 
 
     <br><br><br><br>
