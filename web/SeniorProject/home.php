@@ -58,20 +58,24 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-
+    <h3>Welcome <?php echo $_SESSION['username']; ?>!</h3>
     <div style="text-align:center">
-        <form method="post" action="edit.php">
-            <?php
-            foreach ($db->query('SELECT length, ski_name, make, img_url, ski_id FROM skis ORDER BY ski_id;') as $row) {
-                echo '<div>' . $row['ski_name'];
-                echo ' - <span style="font-weight: none;">' . $row['make'];
-                echo ' ' . $row['length'] . 'cm ';
-                echo '</span> <button type="submit" name="ski_id" value="'.$row['ski_id'].'">Edit</button>';
-                echo '<button type="submit" formaction="delete.php" name="ski_id" value="'.$row['ski_id'].'">Delete</button>';
-                echo '</div><br><br>';
-            };
-            ?>
-        </form>
+
+    <?php
+    if (isset($_SESSION['message']) && $_SESSION['message'])
+    {
+      echo '<p class="notification">' . $_SESSION['message'] . '</p>';
+      unset($_SESSION['message']);
+    }
+  ?>
+  <form method="POST" action="upload.php" enctype="multipart/form-data">
+    <div class="upload-wrapper">
+      <span class="file-name">Choose a file...</span>
+      <label for="file-upload">Browse<input type="file" id="file-upload" name="uploadedFile"></label>
+    </div>
+
+    <input type="submit" name="uploadBtn" value="Upload" />
+  </form>
     </div>
 
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
