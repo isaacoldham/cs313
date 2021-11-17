@@ -22,18 +22,20 @@ try {
     die();
 }
 
+$first_name = htmlspecialchars($_POST["first_name"]);
+$last_name = htmlspecialchars($_POST["last_name"]);
 $username = htmlspecialchars($_POST["username"]);
 $password = htmlspecialchars($_POST["password"]);
 $saltOptions = '';
 
-if ($username != null && $password != null) {
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-} else {
-    $_SESSION["login"] = false;
-    $_SESSION["badLogin"] = true;
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/login.php");
-    die();
-}
+// if ($username != null && $password != null) {
+//     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+// } else {
+//     $_SESSION["login"] = false;
+//     $_SESSION["badLogin"] = true;
+//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/login.php");
+//     die();
+// }
 
 // This updates the password to a hash in the database
 // if (password_verify($password, $hashedPassword)) {
@@ -50,17 +52,23 @@ if ($username != null && $password != null) {
 
 
 
-$stmt = $db->prepare('SELECT password, username FROM user_rental WHERE username =:username /*AND password =:password*/;');
+$stmt = $db->prepare('INSERT INTO users(first_name, last_name, username, password) VALUES (:first_name, :last_name, :username, :password);');
+$stmt->bindValue(':first_name', $firstname, PDO::PARAM_STR);
+$stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-//$stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$_SESSION["rows"] = $rows;
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
+
+
+if ($stmt->execute()) {
+    $_SESSION["login"] = true;
+    $_SESSION["badLogin"] = false;
+    $_SESSION["username"] = $username;
+    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+    die();
+}
 
 
 
-error_log(print_r($rows, true));
-print_r($rows);
 
 /*This checks a password hash against the provided password
 if (password_verify($password, $rows[0]["password"])) {
@@ -69,24 +77,23 @@ if (password_verify($password, $rows[0]["password"])) {
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
     die();
 }*/
-if ($password == $rows[0]["password"]) {
-    $_SESSION["login"] = true;
-    $_SESSION["badLogin"] = false;
-    $_SESSION["user"] = $rows[0]["username"];
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    die();
-}
-/*if ($rows != NULL) {
-    $_SESSION["login"] = true;
-    $_SESSION["badLogin"] = false;
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    die();
-}*/ else {
-    $_SESSION["login"] = false;
-    $_SESSION["badLogin"] = true;
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    die();
-}
+// if ($password == $rows[0]["password"]) {
+//     $_SESSION["login"] = true;
+//     $_SESSION["badLogin"] = false;
+//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+//     die();
+// }
+// /*if ($rows != NULL) {
+//     $_SESSION["login"] = true;
+//     $_SESSION["badLogin"] = false;
+//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+//     die();
+// }*/ else {
+//     $_SESSION["login"] = false;
+//     $_SESSION["badLogin"] = true;
+//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+//     die();
+// }
 ?>
 
 
