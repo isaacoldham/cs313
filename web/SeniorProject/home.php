@@ -58,7 +58,7 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-    <h3>Welcome <?php echo $_SESSION['username']; ?>!</h3>
+    <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
     <div style="text-align:center">
 
     <?php
@@ -70,9 +70,9 @@ if ($_SESSION["login"] != true) {
   ?>
   <form method="POST" action=".php">
     <div class="upload-wrapper">
-      <div class="file-name">Paste your CREATE statement for your database here.</div>
+      <div class="">Paste your CREATE statement for your database here.</div>
       <textarea id="create_text" rows="10" cols="50">CREATE table_name...</textarea>
-      <div class="file-name">Paste the INSERT statements for your database here.</div>
+      <div class="">Paste the INSERT statements for your database here.</div>
       <textarea id="create_text" rows="10" cols="50">INSERT INTO table_name...</textarea>
     </div>
 
