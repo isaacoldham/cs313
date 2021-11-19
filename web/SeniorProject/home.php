@@ -68,10 +68,12 @@ if ($_SESSION["login"] != true) {
       unset($_SESSION['message']);
     }
   ?>
-  <form method="POST" action="upload.php" enctype="multipart/form-data">
+  <form method="POST" action=".php">
     <div class="upload-wrapper">
-      <span class="file-name">Choose a file...</span>
-      <label for="file-upload">Browse<input type="file" id="file-upload" name="uploadedFile"></label>
+      <span class="file-name">Paste your CREATE statement for your database here.</span>
+      <textarea id="create_text" rows="10" cols="50">CREATE table_name...</textarea>
+      <span class="file-name">Paste the INSERT statements for your database here.</span>
+      <textarea id="create_text" rows="10" cols="50">INSERT INTO table_name...</textarea>
     </div>
 
     <input type="submit" name="uploadBtn" value="Upload" />
