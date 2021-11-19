@@ -53,7 +53,7 @@ $saltOptions = '';
 
 
 $stmt = $db->prepare('INSERT INTO users(first_name, last_name, username, password) VALUES (:first_name, :last_name, :username, :password);');
-$stmt->bindValue(':first_name', $firstname, PDO::PARAM_STR);
+$stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
 $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
