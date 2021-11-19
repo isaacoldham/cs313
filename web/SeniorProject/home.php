@@ -70,9 +70,9 @@ if ($_SESSION["login"] != true) {
   ?>
   <form method="POST" action=".php">
     <div class="upload-wrapper">
-      <span class="file-name">Paste your CREATE statement for your database here.</span>
+      <div class="file-name">Paste your CREATE statement for your database here.</div>
       <textarea id="create_text" rows="10" cols="50">CREATE table_name...</textarea>
-      <span class="file-name">Paste the INSERT statements for your database here.</span>
+      <div class="file-name">Paste the INSERT statements for your database here.</div>
       <textarea id="create_text" rows="10" cols="50">INSERT INTO table_name...</textarea>
     </div>
 
