@@ -50,8 +50,9 @@ if ($username != null && $password != null) {
 
 
 
-$stmt = $db->prepare('SELECT password, username FROM user_rental WHERE username =:username /*AND password =:password*/;');
+$stmt = $db->prepare('SELECT password, username FROM user_rental WHERE username = :username  password = :password;');
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':password', $password, PDO::PARAM_STR);
 //$stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
