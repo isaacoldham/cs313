@@ -70,11 +70,12 @@ if ($_SESSION["login"] != true) {
   ?>
   <form method="POST" action=".php">
     <div class="upload-wrapper">
-      <div class="">Paste your CREATE statement for your database here.</div>
-      <textarea id="create_text" rows="10" cols="50">CREATE table_name...</textarea>
-      <div class="">Paste the INSERT statements for your database here.</div>
-      <textarea id="create_text" rows="10" cols="50">INSERT INTO table_name...</textarea>
+      <div class="">Paste your CREATE statement for a table you would like to JSONify...</div>
+      <textarea id="create_text" rows="10" cols="50" placeholder="CREATE table_name..."></textarea><br>
+      <div class="">Paste the INSERT statements for your table here.</div>
+      <textarea id="insert_text" rows="10" cols="50" placeholder="INSERT INTO table_name..."></textarea>
     </div>
+    <br>
 
     <input type="submit" name="uploadBtn" value="Upload" />
   </form>
