@@ -68,7 +68,7 @@ if ($_SESSION["login"] != true) {
       unset($_SESSION['message']);
     }
   ?>
-  <form method="POST" action=".php">
+  <form method="POST" action="processTable.php">
     <div class="upload-wrapper">
       <div class="">Paste your CREATE statement for a table you would like to JSONify...</div>
       <textarea id="create_text" rows="10" cols="50" placeholder="CREATE table_name..."></textarea><br>
@@ -77,7 +77,7 @@ if ($_SESSION["login"] != true) {
     </div>
     <br>
 
-    <input type="submit" name="uploadBtn" value="Upload" />
+    <input type="submit" name="uploadBtn" value="Submit" />
   </form>
     </div>
 
