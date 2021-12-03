@@ -31,6 +31,9 @@ $stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
 if ($stmt1->execute()) {
     echo "it woriked";
 }
+else {
+    echo 'it didnt work';
+}
 
 $stmt2 = $db->prepare(':insert_text');
 $stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
