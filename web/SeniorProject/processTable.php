@@ -38,15 +38,16 @@ $stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
 
 $stmt2 = $db->prepare(':insert_text');
 $stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
+$stmt2->execute();
 
-if ($stmt2->execute()) {
+//if () {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     $_SESSION["username"] = $username;
     echo "Inserted!!!!";
     //header("Location: https://floating-skis.herokuapp.com/SeniorProject/.php");
     //die();
-}
+//}
 
 $parts = explode(' ', $insert_text);
 $table_name = $parts[1];
