@@ -73,9 +73,10 @@ $query = 'SELECT * FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
 
 $dbdata = array();
-while ( $row = pg_fetch_assoc($stmt3)) {
-    $dbdata[]=$row;
-}
+$dbdata = pg_fetch_all($stmt3);
+// while ( $row = pg_fetch_assoc($stmt3)) {
+//     $dbdata[]=$row;
+// }
 echo json_encode($dbdata);
 
 
