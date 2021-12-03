@@ -46,7 +46,7 @@ $insertArray = explode('INSERT INTO', $insert_text);
 array_shift($insertArray);
 print_r($insertArray);
 
-foreach($insertArray as &$insertstmt) {
+foreach($insertArray as &$insertStmt) {
     $dbstmt = $db->prepare('INSERT INTO ' . $insertStmt);
     if($dbstmt->execute()){
         echo "it's working!";
