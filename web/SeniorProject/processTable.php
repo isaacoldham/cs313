@@ -47,7 +47,7 @@ array_shift($insertArray);
 print_r($insertArray);
 
 foreach($insertArray as $insertstmt) {
-    $dbstmt = $db->prepare($insertStmt);
+    $dbstmt = $db->prepare('INSERT INTO ' . $insertStmt);
     if($dbstmt->execute()){
         echo "it's working!";
     }
