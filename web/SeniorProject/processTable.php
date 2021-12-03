@@ -43,6 +43,7 @@ else {
 }
 
 $insertArray = explode('INSERT INTO', $insert_text);
+array_shift($insertArray);
 print_r($insertArray);
 
 
