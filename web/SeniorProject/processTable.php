@@ -46,18 +46,25 @@ $insertArray = explode('INSERT INTO', $insert_text);
 array_shift($insertArray);
 print_r($insertArray);
 
-
-
-$stmt2 = $db->prepare($insert_text);
-
-
-if ($stmt2->execute()) {
-    $_SESSION["login"] = true;
-    $_SESSION["badLogin"] = false;
-    echo "Inserted!!!!";
-    //header("Location: https://floating-skis.herokuapp.com/SeniorProject/.php");
-    //die();
+foreach($insertArray as $insertstmt) {
+    $dbstmt = $db->prepare($insertStmt);
+    if($dbstmt->execute()){
+        echo "it's working!";
+    }
 }
+
+
+
+// $stmt2 = $db->prepare($insert_text);
+
+
+// if ($stmt2->execute()) {
+//     $_SESSION["login"] = true;
+//     $_SESSION["badLogin"] = false;
+//     echo "Inserted!!!!";
+//     //header("Location: https://floating-skis.herokuapp.com/SeniorProject/.php");
+//     //die();
+// }
 
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
