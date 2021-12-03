@@ -77,7 +77,7 @@ if ($_SESSION["login"] != true) {
     </div>
     <br>
 
-    <input type="submit" name="uploadBtn" value="Submit" />
+    <input type="submit" value="Submit" />
   </form>
     </div>
 
