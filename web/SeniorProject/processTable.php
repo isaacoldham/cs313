@@ -28,6 +28,7 @@ $insert_text = htmlspecialchars($_POST["insert_text"]);
 $stmt1 = $db->prepare(':create_text');
 $stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
 
+
 if ($stmt1->execute()) {
     echo "it worked";
 }
