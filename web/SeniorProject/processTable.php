@@ -22,6 +22,13 @@ try {
     die();
 }
 
+
+if ($_SESSION["login"] != true) {
+    header("Location: https://floating-skis.herokuapp.com/SeniorProject/login.php");
+}
+
+
+
 $create_text = htmlspecialchars($_POST["create_text"]);
 $insert_text = htmlspecialchars($_POST["insert_text"]);
 
@@ -35,7 +42,7 @@ else {
     echo 'it didnt work';
 }
 
-$insertArray = explode(');', $insert_text);
+$insertArray = explode('INSERT INTO', $insert_text);
 print_r($insertArray);
 
 
