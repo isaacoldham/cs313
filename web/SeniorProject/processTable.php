@@ -25,23 +25,22 @@ try {
 $create_text = htmlspecialchars($_POST["create_text"]);
 $insert_text = htmlspecialchars($_POST["insert_text"]);
 
-$stmt1 = $db->prepare(':create_text');
-$stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
+$stmt1 = $db->prepare($create_text);
 
 
-// if ($stmt1->execute()) {
-//     echo "it worked";
-// }
-// else {
-//     echo 'it didnt work';
-// }
+if ($stmt1->execute()) {
+    echo "it worked";
+}
+else {
+    echo 'it didnt work';
+}
 
 $stmt2 = $db->prepare(':insert_text');
 $stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
 echo "[ " . $insert_text . " ]";
-//$stmt2->execute();
 
-//if () {
+
+//if ($stmt2->execute();) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     $_SESSION["username"] = $username;
