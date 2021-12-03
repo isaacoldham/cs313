@@ -29,12 +29,12 @@ $stmt1 = $db->prepare(':create_text');
 $stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
 
 
-if ($stmt1->execute()) {
-    echo "it worked";
-}
-else {
-    echo 'it didnt work';
-}
+// if ($stmt1->execute()) {
+//     echo "it worked";
+// }
+// else {
+//     echo 'it didnt work';
+// }
 
 $stmt2 = $db->prepare(':insert_text');
 $stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
@@ -43,7 +43,7 @@ if ($stmt2->pdo->execute()) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     $_SESSION["username"] = $username;
-    echo "I think it worked";
+    echo "Inserted!!!!";
     //header("Location: https://floating-skis.herokuapp.com/SeniorProject/.php");
     //die();
 }
