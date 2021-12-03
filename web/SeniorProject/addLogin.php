@@ -62,7 +62,7 @@ $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 if ($stmt->execute()) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
-    $_SESSION["username"] = $username;
+    $_SESSION["username"] = "Billy";
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
     die();
 }
