@@ -29,7 +29,7 @@ $stmt1 = $db->prepare(':create_text');
 $stmt1->bindValue(':create_text', $create_text, PDO::PARAM_STR);
 
 if ($stmt1->execute()) {
-    echo "it woriked";
+    echo "it worked";
 }
 else {
     echo 'it didnt work';
@@ -38,7 +38,7 @@ else {
 $stmt2 = $db->prepare(':insert_text');
 $stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
 
-if ($stmt2->execute()) {
+if ($stmt2->pdo->execute()) {
     $_SESSION["login"] = true;
     $_SESSION["badLogin"] = false;
     $_SESSION["username"] = $username;
