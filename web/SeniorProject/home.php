@@ -70,7 +70,7 @@ if ($_SESSION["login"] != true) {
   ?>
   <form method="POST" action="processTable.php">
     <div class="upload-wrapper">
-      <div class="">Paste your CREATE statement for a table you would like to JSONify...</div>
+      <div class="">Paste your CREATE statement for a PostgreSQL table.</div>
       <textarea id="create_text" rows="10" cols="50" placeholder="CREATE table_name..."></textarea><br>
       <div class="">Paste the INSERT statements for your table here.</div>
       <textarea id="insert_text" rows="10" cols="50" placeholder="INSERT INTO table_name..."></textarea>

@@ -33,7 +33,7 @@ if ($stmt1->execute()) {
 }
 
 $stmt2 = $db->prepare(':insert_text');
-$stmt2->bindValue(':create_text', $create_text, PDO::PARAM_STR);
+$stmt2->bindValue(':insert_text', $insert_text, PDO::PARAM_STR);
 
 if ($stmt2->execute()) {
     $_SESSION["login"] = true;
@@ -43,6 +43,17 @@ if ($stmt2->execute()) {
     //header("Location: https://floating-skis.herokuapp.com/SeniorProject/.php");
     //die();
 }
+
+$parts = explode(' ', $insert_text);
+$table_name = $parts[1];
+$query = 'SELECT * FROM ' . $table_name . ';';
+$stmt3 = $db->query($query);
+
+$dbdata = array();
+while ( $row = pg_fetch_assoc($stmt3)) {
+    $dbdata[]=$row;
+}
+echo json_encode($dbdata);
 
 
 /*This checks a password hash against the provided password
