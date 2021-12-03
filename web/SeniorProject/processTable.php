@@ -35,6 +35,11 @@ else {
     echo 'it didnt work';
 }
 
+$insertArray = explode(');', $insert_text);
+print_r($insertArray);
+
+
+
 $stmt2 = $db->prepare($insert_text);
 
 
@@ -46,8 +51,9 @@ if ($stmt2->execute()) {
     //die();
 }
 
-$parts = explode(' ', $insert_text);
-$table_name = $parts[1];
+$parts = explode(' ', $create_text);
+$table_name = $parts[2];
+echo 'table_name = [' . $table_name . ']';
 $query = 'SELECT * FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
 
