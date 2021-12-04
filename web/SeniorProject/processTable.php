@@ -87,7 +87,12 @@ $dbdata = $stmt3->fetchAll();
 
 $dropStmt = $db->prepare('DROP TABLE :table_name;');
 $dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
-$dropStmt->execute();
+if($dropStmt->execute()){
+    echo '';
+}
+else {
+    echo 'drop table did not work';
+}
 /*This checks a password hash against the provided password
 if (password_verify($password, $rows[0]["password"])) {
     $_SESSION["login"] = true;
