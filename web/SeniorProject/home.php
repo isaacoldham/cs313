@@ -31,6 +31,7 @@ try {
 //If the $_SESSION["login"] is not equal to true then send the user back to the login page.
 if ($_SESSION["login"] != true) {
     header("Location: https://floating-skis.herokuapp.com/SeniorProject/login.php");
+    die();
 }
 
 ?>
@@ -59,6 +60,7 @@ if ($_SESSION["login"] != true) {
     </header>
 
     <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
+    <h3><?php print_r($_SESSION); ?></h3>
     <div style="text-align:center">
 
     <?php
