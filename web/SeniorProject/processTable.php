@@ -73,7 +73,7 @@ $query = 'SELECT * FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
 
 $dbdata = array();
-$dbdata = pg_fetch_all($stmt3);
+$dbdata = pg_fetch_array($stmt3);
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
