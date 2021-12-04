@@ -89,6 +89,7 @@ echo json_encode($dbdata, JSON_PRETTY_PRINT);
 
 $dropStmt = $db->prepare('DROP TABLE :table_name;');
 $dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
+$dropStmt->execute();
 /*This checks a password hash against the provided password
 if (password_verify($password, $rows[0]["password"])) {
     $_SESSION["login"] = true;
