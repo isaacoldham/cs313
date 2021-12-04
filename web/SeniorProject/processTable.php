@@ -37,7 +37,7 @@ $stmt1 = $db->prepare($create_text);
 
 
 if ($stmt1->execute()) {
-    echo 'that worked ';
+    echo ' ';
 }
 else {
     $_SESSION["create_table"] = false;
@@ -52,8 +52,12 @@ array_shift($insertArray);
 foreach($insertArray as &$insertStmt) {
     $dbstmt = $db->prepare('INSERT INTO ' . $insertStmt);
     if($dbstmt->execute()){
-        echo 'nice';
-        //return true;
+        echo '';
+    }
+    else {
+        $_SESSION["insert_table"] = false;
+        header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+        die();
     }
 }
 
@@ -134,7 +138,7 @@ if (password_verify($password, $rows[0]["password"])) {
 
     </header>
 
-    <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
+    <h2>Welcome <?php echo $_SESSION[0]['username']; ?>!</h2>
     <div style="text-align:center">
 
     <?php
