@@ -37,12 +37,12 @@ $stmt1 = $db->prepare($create_text);
 
 
 if ($stmt1->execute()) {
-    return true;
+    echo 'that worked ';
 }
 else {
     $_SESSION["create_table"] = false;
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    die();
+    // header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+    // die();
 }
 
 $insertArray = explode('INSERT INTO', $insert_text);
@@ -52,7 +52,8 @@ array_shift($insertArray);
 foreach($insertArray as &$insertStmt) {
     $dbstmt = $db->prepare('INSERT INTO ' . $insertStmt);
     if($dbstmt->execute()){
-        return true;
+        echo 'nice';
+        //return true;
     }
 }
 

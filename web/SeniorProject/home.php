@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+echo session_id();
 //Connect to the database
 try {
     $dbUrl = getenv('DATABASE_URL');
