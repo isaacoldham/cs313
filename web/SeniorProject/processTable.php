@@ -38,8 +38,7 @@ $stmt1 = $db->prepare($create_text);
 
 if ($stmt1->execute()) {
     echo ' ';
-}
-else {
+} else {
     $_SESSION["create_table"] = false;
     // header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
     // die();
@@ -49,12 +48,11 @@ $insertArray = explode('INSERT INTO', $insert_text);
 array_shift($insertArray);
 //print_r($insertArray);
 
-foreach($insertArray as &$insertStmt) {
+foreach ($insertArray as &$insertStmt) {
     $dbstmt = $db->prepare('INSERT INTO ' . $insertStmt);
-    if($dbstmt->execute()){
+    if ($dbstmt->execute()) {
         echo '';
-    }
-    else {
+    } else {
         $_SESSION["insert_table"] = false;
         header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
         die();
@@ -85,7 +83,7 @@ $dbdata = $stmt3->fetchAll();
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
-echo json_encode($dbdata, JSON_PRETTY_PRINT);
+
 
 $dropStmt = $db->prepare('DROP TABLE :table_name;');
 $dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
@@ -134,7 +132,7 @@ if (password_verify($password, $rows[0]["password"])) {
     <header>
         <h1>The RD Converter</h1>
         <div id="menu">
-            
+
         </div>
 
     </header>
@@ -142,19 +140,21 @@ if (password_verify($password, $rows[0]["password"])) {
     <h2>Welcome <?php echo $_SESSION[0]['username']; ?>!</h2>
     <div style="text-align:center">
 
-    <?php
-    // if (isset($_SESSION['message']) && $_SESSION['message'])
-    // {
-    //   echo '<p class="notification">' . $_SESSION['message'] . '</p>';
-    //   unset($_SESSION['message']);
-    // }
-    print_r($_SESSION);
-  ?>
+        <?php
+        // if (isset($_SESSION['message']) && $_SESSION['message'])
+        // {
+        //   echo '<p class="notification">' . $_SESSION['message'] . '</p>';
+        //   unset($_SESSION['message']);
+        // }
+        print_r($_SESSION);
+        ?>
 
     </div>
 
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <br>
+        <?php echo json_encode($dbdata, JSON_PRETTY_PRINT); ?>
+        <br><br>
+        <?php echo json_encode($dbdata); ?>
     </div>
 
     <br><br><br><br>
