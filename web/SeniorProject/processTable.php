@@ -79,7 +79,7 @@ echo 'table_name = [' . $table_name . ']';
 
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
-$stmt3 = $db->query($query);
+$stmt3 = $db->prepare($query);
 $dbdata = $stmt3->execute();
 echo '<br>number 2 ' . $dbdata . '<br>';
 print_r($dbdata);
