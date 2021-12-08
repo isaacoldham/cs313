@@ -137,9 +137,12 @@ else {
         ?>
 
     </div>
-
+        
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <?php echo json_encode($dbdata, JSON_PRETTY_PRINT); ?>
+        <?php //echo json_encode($dbdata, JSON_PRETTY_PRINT); 
+            echo '<br>Did this work?' . $dbdata;            
+        ?><br>
+
         <br><br>
         <div id="jsonDiv"><?php echo json_encode($dbdata); ?></div>
     </div>
