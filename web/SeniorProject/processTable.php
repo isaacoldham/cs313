@@ -72,8 +72,23 @@ foreach ($insertArray as &$insertStmt) {
 //     //die();
 // }
 
+
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
+
+echo 'take1';
+
+$myArray = array();
+while ($row = pg_fetch_row($contests)) {
+  $myArray[] = $row;
+}
+
+echo json_encode($myArray);
+
+echo '<br>';
+
+
+
 echo 'table_name = [' . $table_name . ']';
 $query = 'SELECT * -> ' . $table_name . ' FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
@@ -97,30 +112,7 @@ if($dropStmt->execute()){
 else {
     echo 'drop table did not work';
 }
-/*This checks a password hash against the provided password
-if (password_verify($password, $rows[0]["password"])) {
-    $_SESSION["login"] = true;
-    $_SESSION["badLogin"] = false;
-    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    die();
-}*/
-// if ($password == $rows[0]["password"]) {
-//     $_SESSION["login"] = true;
-//     $_SESSION["badLogin"] = false;
-//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-//     die();
-// }
-// /*if ($rows != NULL) {
-//     $_SESSION["login"] = true;
-//     $_SESSION["badLogin"] = false;
-//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-//     die();
-// }*/ else {
-//     $_SESSION["login"] = false;
-//     $_SESSION["badLogin"] = true;
-//     header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-//     die();
-// }
+
 ?>
 
 <!DOCTYPE html>
