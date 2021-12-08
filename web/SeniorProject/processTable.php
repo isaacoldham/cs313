@@ -72,25 +72,13 @@ foreach ($insertArray as &$insertStmt) {
 //     //die();
 // }
 
-
+// Get the table name
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
-
-echo 'take1';
-
-$myArray = array();
-while ($row = pg_fetch_row($contests)) {
-  $myArray[] = $row;
-}
-
-echo json_encode($myArray);
-
-echo '<br>';
-
-
-
 echo 'table_name = [' . $table_name . ']';
-$query = 'SELECT * -> ' . $table_name . ' FROM ' . $table_name . ';';
+
+
+$query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
 
 echo 'Number 1 ' . gettype($stmt3) . '<br>';
@@ -103,6 +91,8 @@ print_r($dbdata);
 //     $dbdata[]=$row;
 // }
 
+
+// Drop the table that was just created
 $dropString = 'DROP TABLE IF EXISTS ' . $table_name;
 $dropStmt = $db->prepare($dropString);
 //$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
