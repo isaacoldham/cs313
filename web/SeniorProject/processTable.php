@@ -80,9 +80,7 @@ echo 'table_name = [' . $table_name . ']';
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
-echo '<br>am I allowed to do this<br>';
-print_r($stmt3);
-$dbdata = $stmt3->fetchAll();
+$dbdata = $stmt3->execute();
 echo '<br>number 2 ' . $dbdata . '<br>';
 print_r($dbdata);
 // while ( $row = pg_fetch_assoc($stmt3)) {
@@ -141,13 +139,7 @@ else {
     </div>
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <?php //echo json_encode($dbdata, JSON_PRETTY_PRINT); 
-            $text = explode('Array ( [0] => Array ( [json] => ', print_r($dbdata, true));
-            echo '<br>Did this work?' . $text;            
-        ?><br>
-
-        <br><br>
-        <div id="jsonDiv"><?php echo json_encode($dbdata, JSON_UNESCAPED_SLASHES); ?></div>
+        <div id="jsonDiv"><?php echo $dbdata; ?></div>
     </div>
 
     <br><br><br><br>
