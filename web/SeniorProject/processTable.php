@@ -144,7 +144,7 @@ else {
         ?><br>
 
         <br><br>
-        <div id="jsonDiv"><?php echo json_encode($dbdata); ?></div>
+        <div id="jsonDiv"><?php echo json_encode($dbdata, JSON_UNESCAPED_SLASHES); ?></div>
     </div>
 
     <br><br><br><br>
