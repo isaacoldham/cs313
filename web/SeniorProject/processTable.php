@@ -180,4 +180,5 @@ if (password_verify($password, $rows[0]["password"])) {
     var jsonString = document.getElementById(jsonDiv).innerHTML;
     var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById(jsonDiv).innerHTML = jsonPretty;
+    console.log(jsonPretty);
 </script>
