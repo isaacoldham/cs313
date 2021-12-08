@@ -133,7 +133,7 @@ else {
         //   echo '<p class="notification">' . $_SESSION['message'] . '</p>';
         //   unset($_SESSION['message']);
         // }
-        print_r($_SESSION);
+        //print_r($_SESSION);
         ?>
 
     </div>
@@ -141,7 +141,7 @@ else {
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <?php //echo json_encode($dbdata, JSON_PRETTY_PRINT); 
             $text = explode('Array ( [0] => Array ( [json] => ', print_r($dbdata, true));
-            echo '<br>Did this work?' . print($dbdata[0]);            
+            echo '<br>Did this work?' . $text;            
         ?><br>
 
         <br><br>
