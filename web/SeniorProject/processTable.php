@@ -75,7 +75,7 @@ foreach ($insertArray as &$insertStmt) {
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
 echo 'table_name = [' . $table_name . ']';
-$query = 'SELECT * FROM ' . $table_name . ';';
+$query = 'SELECT * -> ' . $table_name . ' FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
 
 echo 'Number 1 ' . gettype($stmt3) . '<br>';
