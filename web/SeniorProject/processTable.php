@@ -131,13 +131,13 @@ else {
         //   echo '<p class="notification">' . $_SESSION['message'] . '</p>';
         //   unset($_SESSION['message']);
         // }
-        print_r($_SESSION);
+        
         ?>
 
     </div>
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <div id="jsonDiv"><?php echo print_r($dbdata); ?></div>
+        <div id="jsonDiv"><?php print_r($_SESSION); ?></div>
     </div>
 
     <br><br><br><br>
