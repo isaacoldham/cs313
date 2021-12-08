@@ -78,8 +78,11 @@ echo 'table_name = [' . $table_name . ']';
 $query = 'SELECT * FROM ' . $table_name . ';';
 $stmt3 = $db->query($query);
 
+echo 'Number 1 ' . $db->query($query) . '<br>';
+
 $dbdata = array();
 $dbdata = $stmt3->fetchAll();
+echo 'number 2 ' . $stmt3->fetchAll() . '<br>';
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
@@ -142,7 +145,7 @@ if (password_verify($password, $rows[0]["password"])) {
 
     </header>
 
-    <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
+    <h2>Feel free to copy and paste your JSON object where ever needed!</h2>
     <div style="text-align:center">
 
         <?php
