@@ -83,7 +83,7 @@ $stmt3 = $db->query($query);
 
 echo 'Number 1 ' . gettype($stmt3) . '<br>';
 
-$dbdata = array();
+
 $dbdata = $stmt3->fetchAll();
 echo 'number 2 ' . $dbdata . '<br>';
 print_r($dbdata);
