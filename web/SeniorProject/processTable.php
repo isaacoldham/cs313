@@ -142,7 +142,7 @@ if (password_verify($password, $rows[0]["password"])) {
 
     </header>
 
-    <h2>Welcome <?php echo $_SESSION[0]['username']; ?>!</h2>
+    <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
     <div style="text-align:center">
 
         <?php
@@ -159,7 +159,7 @@ if (password_verify($password, $rows[0]["password"])) {
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <?php echo json_encode($dbdata, JSON_PRETTY_PRINT); ?>
         <br><br>
-        <?php echo json_encode($dbdata); ?>
+        <div id="jsonDiv"><?php echo json_encode($dbdata); ?></div>
     </div>
 
     <br><br><br><br>
@@ -176,3 +176,8 @@ if (password_verify($password, $rows[0]["password"])) {
 </body>
 
 </html>
+<script>
+    var jsonString = document.getElementById(jsonDiv).innerHTML;
+    var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
+    document.getElementById(jsonDiv).innerHTML = jsonPretty;
+</script>
