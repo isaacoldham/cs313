@@ -80,10 +80,6 @@ echo 'table_name = [' . $table_name . ']';
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
-
-echo 'Number 1 ' . gettype($stmt3) . '<br>';
-
-
 $dbdata = $stmt3->fetchAll();
 echo 'number 2 ' . $dbdata . '<br>';
 print_r($dbdata);
