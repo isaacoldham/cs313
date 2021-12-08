@@ -82,7 +82,7 @@ echo 'Number 1 ' . gettype($stmt3) . '<br>';
 
 $dbdata = array();
 $dbdata = $stmt3->fetchAll();
-echo 'number 2 ' . $stmt3->fetchAll() . '<br>';
+echo 'number 2 ' . $dbdata . '<br>';
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
