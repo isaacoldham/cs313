@@ -84,9 +84,9 @@ $dbdata = $stmt3->fetchAll();
 //     $dbdata[]=$row;
 // }
 
-
-$dropStmt = $db->prepare('DROP TABLE :table_name;');
-$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
+$dropString = 'DROP TABLE IF EXISTS ' . $table_name;
+$dropStmt = $db->prepare($dropString);
+//$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
 if($dropStmt->execute()){
     echo '';
 }
