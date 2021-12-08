@@ -158,9 +158,9 @@ else {
 </html>
 <script>
     var jsonString = document.getElementById('jsonDiv').innerText;
-    jsonText = jsonString.substring(20);
-    console.log(jsonText);
-    var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
+    jsonString = jsonString.substring(18, jsonString.length - 1);
+    console.log(jsonString);
+    var jsonPretty = JSON.stringify(JSON.parse(jsonText),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
     console.log(jsonPretty);
 </script>
