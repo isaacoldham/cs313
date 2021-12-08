@@ -140,7 +140,7 @@ else {
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <?php //echo json_encode($dbdata, JSON_PRETTY_PRINT); 
-            echo '<br>Did this work?' . print($dbdata);            
+            echo '<br>Did this work?' . print($dbdata[0]);            
         ?><br>
 
         <br><br>
