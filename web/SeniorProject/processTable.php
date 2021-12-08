@@ -156,11 +156,7 @@ else {
 </html>
 <script>
     let jsonString = document.getElementById('jsonDiv').innerHTML;
-    jsonString.replace("Array
-(
-    [0] =&gt; Array
-        (
-            [json] =&gt; "", "");
+    jsonString.replace("Array", "");
     console.log(jsonString);
     let jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
