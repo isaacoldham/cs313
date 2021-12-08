@@ -139,7 +139,7 @@ else {
     </div>
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <div id="jsonDiv"><?php echo $dbdata; ?></div>
+        <div id="jsonDiv"><?php print_r($dbdata); ?></div>
     </div>
 
     <br><br><br><br>
