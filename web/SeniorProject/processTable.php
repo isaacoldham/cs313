@@ -80,8 +80,10 @@ echo 'table_name = [' . $table_name . ']';
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
+echo '<br>am I allowed to do this<br>';
+print_r($stmt3);
 $dbdata = $stmt3->fetchAll();
-echo 'number 2 ' . $dbdata . '<br>';
+echo '<br>number 2 ' . $dbdata . '<br>';
 print_r($dbdata);
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
