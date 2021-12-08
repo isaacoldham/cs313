@@ -158,8 +158,8 @@ else {
 </html>
 <script>
     var jsonString = document.getElementById('jsonDiv').innerText;
-    jsonString.substring(20);
-    console.log(jsonString);
+    jsonText = jsonString.substring(20);
+    console.log(jsonText);
     var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
     console.log(jsonPretty);
