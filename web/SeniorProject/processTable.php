@@ -157,7 +157,7 @@ else {
 
 </html>
 <script>
-    var jsonString = document.getElementById('jsonDiv').innerHTML;
+    var jsonString = document.getElementById('jsonDiv').innerHTML.toString;
     console.log(jsonString);
     var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
