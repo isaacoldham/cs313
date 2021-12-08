@@ -81,8 +81,7 @@ echo 'table_name = [' . $table_name . ']';
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
 $dbdata = $stmt3->fetch();
-echo '<br>number 2 ' . $dbdata . '<br>';
-print_r($dbdata);
+
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
@@ -160,7 +159,7 @@ else {
     var jsonString = document.getElementById('jsonDiv').innerText;
     jsonString = jsonString.substring(18, jsonString.length - 1);
     console.log(jsonString);
-    var jsonPretty = JSON.stringify(JSON.parse(jsonText),null,2);  
+    var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
     console.log(jsonPretty);
 </script>
