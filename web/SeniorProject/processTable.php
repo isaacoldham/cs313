@@ -75,14 +75,12 @@ foreach ($insertArray as &$insertStmt) {
 // Get the table name
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
-echo 'table_name = [' . $table_name . ']';
+//echo 'table_name = [' . $table_name . ']';
 
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
 $stmt3 = $db->query($query);
 $dbdata = $stmt3->fetchAll();
-echo 'number 2 ' . $dbdata . '<br>';
-print_r($dbdata);
 // while ( $row = pg_fetch_assoc($stmt3)) {
 //     $dbdata[]=$row;
 // }
@@ -139,13 +137,7 @@ else {
     </div>
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <?php //echo json_encode($dbdata, JSON_PRETTY_PRINT); 
-            $text = explode('Array ( [0] => Array ( [json] => ', print_r($dbdata));
-            echo '<br>Did this work?' . $text;            
-        ?><br>
-
-        <br><br>
-        <div id="jsonDiv"><?php echo json_encode($dbdata, JSON_UNESCAPED_SLASHES); ?></div>
+        <div id="jsonDiv"><?php echo print_r($dbdata); ?></div>
     </div>
 
     <br><br><br><br>
@@ -163,8 +155,10 @@ else {
 
 </html>
 <script>
-    var jsonString = document.getElementById('jsonDiv').innerHTML;
-    var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
+    let jsonString = document.getElementById('jsonDiv').innerHTML;
+    jsonString.replace("Array ( [0] => Array ( [json] => ", "");
+
+    let jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
     document.getElementById('jsonDiv').innerHTML = jsonPretty;
     console.log(jsonPretty);
 </script>
