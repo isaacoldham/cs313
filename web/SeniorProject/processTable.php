@@ -159,7 +159,7 @@ else {
     var jsonString = document.getElementById('jsonDiv').innerText;
     jsonString = jsonString.substring(18, jsonString.length - 1);
     console.log(jsonString);
-    var jsonPretty = JSON.stringify(JSON.parse(jsonString),null,2);  
+    var jsonPretty = JSON.stringify(JSON.parse(jsonString));  
     document.getElementById('jsonDiv').innerText = jsonPretty;
     console.log(jsonPretty);
 </script>
