@@ -157,11 +157,13 @@ else {
 </html>
 <script>
     var jsonString = document.getElementById('jsonDiv').innerText;
-    jsonString = JSON.stringify(jsonString.substring(18, jsonString.length - 1));
-    console.log(jsonString);
+    jsonString = JSON.stringify(jsonString.substring(18, jsonString.length - 1))
+    console.log(jsonString)
     console.log(typeof jsonString)
-    var jsonPretty = JSON.parse(jsonString); 
+    var jsonPretty = JSON.parse(jsonString)
     console.log(typeof jsonPretty)
-    document.getElementById('jsonDiv').innerText = jsonPretty;
-    console.log(jsonPretty);
+    jsonPretty = JSON.parse(jsonString)
+    console.log(typeof jsonPretty)
+    document.getElementById('jsonDiv').innerText = jsonPretty
+    console.log(jsonPretty)
 </script>
