@@ -73,9 +73,9 @@ if ($_SESSION["login"] != true) {
   <form method="POST" action="processTable.php">
     <div class="upload-wrapper">
       <div class="">Paste your CREATE statement for a PostgreSQL table.</div>
-      <textarea name="create_text" rows="10" cols="50" placeholder="CREATE table_name..."></textarea><br>
+      <textarea name="create_text" rows="20" cols="100" placeholder="CREATE table_name..."></textarea><br>
       <div class="">Paste the INSERT statements for your table here.</div>
-      <textarea name="insert_text" rows="10" cols="50" placeholder="INSERT INTO table_name..."></textarea>
+      <textarea name="insert_text" rows="20" cols="100" placeholder="INSERT INTO table_name..."></textarea>
     </div>
     <br>
 
@@ -87,7 +87,7 @@ if ($_SESSION["login"] != true) {
         <br>
     </div>
 
-    <br><br><br><br>
+    <br><br><br>
     <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
     To see a super cool video of the world record ski jump!
