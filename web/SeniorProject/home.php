@@ -1,7 +1,7 @@
 <?php
-session_start();
-echo session_id();
+
 //Connect to the database
+session_start();
 try {
     $dbUrl = getenv('DATABASE_URL');
     $dbOpts = parse_url($dbUrl);
@@ -59,8 +59,8 @@ if ($_SESSION["login"] != true) {
 
     </header>
 
-    <h2>Welcome <?php echo $_SESSION['username']; ?>!</h2>
-    <h3><?php print_r($_SESSION); ?></h3>
+    <h2>Welcome<?php //echo $_SESSION['username']; ?>!</h2>
+    
     <div style="text-align:center">
 
     <?php
