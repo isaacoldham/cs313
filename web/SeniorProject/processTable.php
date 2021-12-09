@@ -91,10 +91,9 @@ $dbdata = $stmt3->fetch();
 $dropString = 'DROP TABLE IF EXISTS ' . $table_name;
 $dropStmt = $db->prepare($dropString);
 //$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
-if($dropStmt->execute()){
+if ($dropStmt->execute()) {
     echo '';
-}
-else {
+} else {
     echo 'drop table did not work';
 }
 
@@ -122,7 +121,9 @@ else {
         </div>
 
     </header>
-
+    <br>
+    <a href="home.php" class="links">Home Page</a>
+    <br>
     <h2>Here's your JSON!</h2>
     <div style="text-align:center">
 
@@ -136,13 +137,11 @@ else {
         ?>
 
     </div>
-        
+
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
         <pre><div id="jsonDiv"><?php print_r($dbdata); ?></div></pre>
     </div>
 
-    <br><br>
-    <a href="home.php" class="links">Home Page</a>
     <br><br>
     <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
@@ -162,9 +161,9 @@ else {
     jsonString = jsonString.substring(21, jsonString.length - 2)
     jsonString = jsonString.substring((jsonString.length / 2) + 5)
     jsonString = jsonString.toString();
-    console.log('|'+jsonString+'|')
+    console.log('|' + jsonString + '|')
     let myjson = JSON.parse(jsonString)
-    console.log('|'+myjson+'|')
+    console.log('|' + myjson + '|')
     console.log(myjson)
     console.log(typeof myjson)
     let jsonPretty = JSON.stringify(myjson, undefined, 4)
