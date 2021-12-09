@@ -137,7 +137,7 @@ if ($dropStmt->execute()) {
     </div>
 
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <pre><code id="jsonDiv"><?php print_r($dbdata); ?></code></pre>
+        <pre><div id="jsonDiv"><?php print_r($dbdata); ?></div></pre>
     </div>
 
     <br><br><br><br>
