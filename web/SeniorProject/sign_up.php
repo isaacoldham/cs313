@@ -46,11 +46,11 @@ session_start();
         </div>
         <div style="margin-bottom:10px;">
             Password:
-            <input type="password" name="password">
+            <input type="password" name="password" id='password'>
         </div>
         <div style="margin-bottom:10px;">
             Ry-type your password:
-            <input type="password" name="password2">
+            <input type="password" name="password2" id='password2'>
         </div>
 
         <input type="submit" value="Login">
@@ -69,3 +69,16 @@ session_start();
 </body>
 
 </html>
+<script>
+    element.addEventListener("submit", function(event) {
+        let password = document.getElementById('password').value
+        let password1 = document.getElementById("password1").value
+        if (password != password1) {
+            event.preventDefault();
+        }
+        else{
+            return
+        }
+
+    });
+</script>

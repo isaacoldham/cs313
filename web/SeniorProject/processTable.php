@@ -123,7 +123,7 @@ else {
 
     </header>
 
-    <h2>Feel free to copy and paste your JSON object where ever needed!</h2>
+    <h2>Here's your JSON!</h2>
     <div style="text-align:center">
 
         <?php
@@ -141,7 +141,9 @@ else {
         <pre><div id="jsonDiv"><?php print_r($dbdata); ?></div></pre>
     </div>
 
-    <br><br><br><br>
+    <br><br>
+    <a href="home.php" class="links">Home Page</a>
+    <br><br>
     <!-- <div class="picDiv">
     <button onclick="showImage()">Click here</button>
     To see a super cool video of the world record ski jump!
