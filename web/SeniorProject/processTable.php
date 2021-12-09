@@ -40,8 +40,8 @@ if ($stmt1->execute()) {
     echo ' ';
 } else {
     $_SESSION["create_table"] = false;
-    // header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
-    // die();
+    header("Location: https://floating-skis.herokuapp.com/SeniorProject/home.php");
+    die();
 }
 
 $insertArray = explode('INSERT INTO', $insert_text);
@@ -75,7 +75,7 @@ foreach ($insertArray as &$insertStmt) {
 // Get the table name
 $parts = explode(' ', $create_text);
 $table_name = $parts[2];
-echo 'table_name = [' . $table_name . ']';
+//echo 'table_name = [' . $table_name . ']';
 
 
 $query = 'WITH p as (SELECT * FROM ' . $table_name . ') select json_agg(p) as json from p;';
@@ -138,7 +138,7 @@ else {
     </div>
         
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <div id="jsonDiv"><?php print_r($dbdata); ?></div>
+        <pre><div id="jsonDiv"><?php print_r($dbdata); ?></div></pre>
     </div>
 
     <br><br><br><br>
