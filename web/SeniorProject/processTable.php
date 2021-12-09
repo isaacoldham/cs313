@@ -91,9 +91,10 @@ $dbdata = $stmt3->fetch();
 $dropString = 'DROP TABLE IF EXISTS ' . $table_name;
 $dropStmt = $db->prepare($dropString);
 //$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
-if ($dropStmt->execute()) {
+if($dropStmt->execute()){
     echo '';
-} else {
+}
+else {
     echo 'drop table did not work';
 }
 
@@ -135,9 +136,9 @@ if ($dropStmt->execute()) {
         ?>
 
     </div>
-
+        
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <pre><div id="jsonDiv"><?php print_r($dbdata); ?></div></pre>
+        <div id="jsonDiv"><?php print_r($dbdata); ?></div>
     </div>
 
     <br><br><br><br>
@@ -155,12 +156,10 @@ if ($dropStmt->execute()) {
 
 </html>
 <script>
-    
-
-    let jsonString = document.getElementById('jsonDiv').innerText;
-    jsonString = jsonString.substring(21, jsonString.length - 2);
+    var jsonString = document.getElementById('jsonDiv').innerText;
+    jsonString = jsonString.substring(18, jsonString.length - 1);
     console.log(jsonString);
-    let jsonPretty = JSON.stringify(jsonString);
-    $('#jsonDiv').html(library.json.prettyPrint(jsonPretty));
+    var jsonPretty = JSON.stringify(jsonString);  
+    document.getElementById('jsonDiv').innerText = jsonPretty;
     console.log(jsonPretty);
 </script>
