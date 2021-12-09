@@ -157,6 +157,7 @@ else {
 </html>
 <script>
     var jsonString = document.getElementById('jsonDiv').innerText;
+    console.log('|'+jsonString+'|')
     jsonString = JSON.parse(jsonString.substring(18, jsonString.length - 1))
     console.log(jsonString)
     console.log(typeof jsonString)
