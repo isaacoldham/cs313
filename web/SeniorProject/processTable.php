@@ -165,8 +165,7 @@ else {
     console.log('|'+myjson+'|')
     console.log(myjson)
     console.log(typeof myjson)
-    //var jsonPretty = JSON.parse(jsonString)
-let jsonPretty = myjson;
+    let jsonPretty = JSON.stringify(myjson)
 
     document.getElementById('jsonDiv').innerText = jsonPretty
     console.log(jsonPretty)
