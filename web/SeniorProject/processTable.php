@@ -91,10 +91,9 @@ $dbdata = $stmt3->fetch();
 $dropString = 'DROP TABLE IF EXISTS ' . $table_name;
 $dropStmt = $db->prepare($dropString);
 //$dropStmt->bindValue(':table_name', $table_name, PDO::PARAM_STR);
-if($dropStmt->execute()){
+if ($dropStmt->execute()) {
     echo '';
-}
-else {
+} else {
     echo 'drop table did not work';
 }
 
@@ -136,9 +135,9 @@ else {
         ?>
 
     </div>
-        
+
     <div style="width: 100%; float: clear; box-sizing: border-box; clear: both;">
-        <div id="jsonDiv"><?php print_r($dbdata); ?></div>
+        <pre><code id="jsonDiv"><?php print_r($dbdata); ?></code></pre>
     </div>
 
     <br><br><br><br>
@@ -156,10 +155,36 @@ else {
 
 </html>
 <script>
+    library.json = {
+        replacer: function(match, pIndent, pKey, pVal, pEnd) {
+            var key = '<span class=json-key>';
+            var val = '<span class=json-value>';
+            var str = '<span class=json-string>';
+            var r = pIndent || '';
+            if (pKey)
+                r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+            if (pVal)
+                r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+            return r + (pEnd || '');
+        },
+        prettyPrint: function(obj) {
+            var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+            return JSON.stringify(obj, null, 3)
+                .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+                .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                .replace(jsonLine, library.json.replacer);
+        }
+    };
+
+    // var account = { active: true, codes: [48348, 28923, 39080], city: "London" };
+    // var planets = [{ name: 'Earth', order: 3, stats: { life: true, mass: 5.9736 * Math.pow(10, 24) } }, { name: 'Saturn', order: 6, stats: { life: null, mass: 568.46 * Math.pow(10, 24) } }];
+     
+    // $('#planets').html(library.json.prettyPrint(planets));
     var jsonString = document.getElementById('jsonDiv').innerText;
     jsonString = jsonString.substring(18, jsonString.length - 1);
     console.log(jsonString);
-    var jsonPretty = JSON.stringify(jsonString);  
-    document.getElementById('jsonDiv').innerText = jsonPretty;
+    var jsonPretty = JSON.stringify(jsonString);
+    $('#jsonDiv').html(library.json.prettyPrint(jsonPretty));
+    //document.getElementById('jsonDiv').innerText = jsonPretty;
     console.log(jsonPretty);
 </script>
