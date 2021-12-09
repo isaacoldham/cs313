@@ -75,10 +75,6 @@ session_start();
         let password1 = document.getElementById("password1").value
         if (password != password1) {
             event.preventDefault();
-        }
-        else{
-            return
-        }
-
-    });
+            window.history.back();
+        }}, true);
 </script>
