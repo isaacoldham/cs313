@@ -158,7 +158,7 @@ if ($dropStmt->execute()) {
     
 
     let jsonString = document.getElementById('jsonDiv').innerText;
-    jsonString = jsonString.substring(18, jsonString.length - 1);
+    jsonString = jsonString.substring(21, jsonString.length - 2);
     console.log(jsonString);
     let jsonPretty = JSON.stringify(jsonString);
     $('#jsonDiv').html(library.json.prettyPrint(jsonPretty));
