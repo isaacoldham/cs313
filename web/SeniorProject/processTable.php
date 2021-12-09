@@ -161,12 +161,12 @@ else {
     jsonString = jsonString.substring((jsonString.length / 2) + 5)
     jsonString = jsonString.toString();
     console.log('|'+jsonString+'|')
-    jsonString = JSON.parse(jsonString)
-    console.log('|'+jsonString+'|')
-    console.log(jsonString)
-    console.log(typeof jsonString)
+    let myjson = JSON.parse(jsonString)
+    console.log('|'+myjson+'|')
+    console.log(myjson)
+    console.log(typeof myjson)
     //var jsonPretty = JSON.parse(jsonString)
-let jsonPretty = jsonString;
+let jsonPretty = myjson;
 
     document.getElementById('jsonDiv').innerText = jsonPretty
     console.log(jsonPretty)
