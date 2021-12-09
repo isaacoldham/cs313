@@ -161,8 +161,6 @@ else {
     console.log(jsonString)
     console.log(typeof jsonString)
     var jsonPretty = JSON.parse(jsonString)
-    console.log(typeof jsonPretty)
-    jsonPretty = JSON.stringify(jsonPretty);
     document.getElementById('jsonDiv').innerText = jsonPretty
     console.log(jsonPretty)
 </script>
