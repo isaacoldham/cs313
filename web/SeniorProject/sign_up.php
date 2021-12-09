@@ -53,7 +53,7 @@ session_start();
             <input type="password" name="password2" id='password2'>
         </div>
 
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class='links'>
     </form>
 
     <br><br>
