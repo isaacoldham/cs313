@@ -157,10 +157,10 @@ if ($dropStmt->execute()) {
 <script>
     
 
-    var jsonString = document.getElementById('jsonDiv').innerText;
+    let jsonString = document.getElementById('jsonDiv').innerText;
     jsonString = jsonString.substring(18, jsonString.length - 1);
     console.log(jsonString);
-    var jsonPretty = JSON.stringify(jsonString, undefined, 4);
+    let jsonPretty = JSON.stringify(jsonString, undefined, 4);
     $('#jsonDiv').html(library.json.prettyPrint(jsonPretty));
     console.log(jsonPretty);
 </script>
