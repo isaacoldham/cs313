@@ -26,7 +26,7 @@ session_start();
     <h2>Please Login</h2>
 
     <?php
-    if ($_SESSION["badLogin"] = true) {
+    if ($_SESSION["badLogin"] == true) {
         echo '<div style="color:red;">There was an error with your login. Please try again.</div>';
     }
     ?>
